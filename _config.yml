@@ -30,3 +30,15 @@ repository:
 html:
   use_issues_button: true
   use_repository_button: true
+
+sphinx:
+  config:
+    mathjax_config:
+      tex:
+        macros:
+          "N": "\\mathbb{N}"
+          "floor": ["\\lfloor#1\\rfloor", 1]
+          "bmat" : ["\\left[\\begin{array}"]
+          "emat" : ["\\end{array}\\right]"]
+          "expec" : ["\\mathbb{E}\\left[#1\\right]", 1]
+          "expecc" : ["\\mathbb{E}^\\mathbb{#1}\\left[#2\\right]", 2]

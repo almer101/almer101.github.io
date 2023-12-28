@@ -4,12 +4,12 @@
 format: jb-book
 root: intro
 parts:
-  - caption: My Part
+  - caption: Stochastic Processes
     chapters:
     - file: mymarkdownfile
-  - caption: Generated Part
+    - file: brownian_motion
+  - caption: Auto-Generated Part
     chapters:
     - file: notebooks
     - file: markdown
-      sections:
-      - file: markdown-notebooks
+    - file: markdown-notebooks      
