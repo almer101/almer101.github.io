@@ -8,6 +8,10 @@ parts:
     chapters:
     - file: mymarkdownfile
     - file: brownian_motion
+    - file: generalized_brownian_motion
+  - caption: Fixed Income
+    chapters:
+    - file: floating_rate_bonds
   - caption: Auto-Generated Part
     chapters:
     - file: notebooks
