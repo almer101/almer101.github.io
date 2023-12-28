@@ -27,7 +27,7 @@ Feel free to get in touch with me through any of my accounts or check out my CV:
 
 🧑🏽‍💻 [GitHub](https://github.com/almer101)
 
-📄 [Curriculum Vitae](https://github.com/almer101/CV)
+📄 [Curriculum Vitae](https://github.com/almer101/CV/blob/master/Ivan%20Almer%20(Bocconi)%20-%20CV.pdf)
 
 ## Past projects
 
