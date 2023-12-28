@@ -158,12 +158,12 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">My Part</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Stochastic Processes</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="mymarkdownfile.html">Hola Maria</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Brownian Motion</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Generated Part</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Auto-Generated Part</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="notebooks.html">Content with notebooks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="markdown.html">Markdown Files</a></li>
@@ -362,10 +362,8 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#random-walk">Random Walk</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#smaller-and-smaller-steps">Smaller and smaller steps</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#random-walk">Random Walk</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#smaller-and-smaller-steps">Smaller and smaller steps</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#back-to-brownian-motion">Back to Brownian Motion</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-point-of-view">Mathematical point of view</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formal-definition-of-the-brownian-motion">Formal definition of the Brownian Motion</a></li>
@@ -454,8 +452,9 @@ document.write(`
 </div>
 </div>
 <p>As you can see, in our example after 6 steps our human ended up again at the same position where it started. Now we will try to see what happend when we make our steps smaller and smaller :)</p>
+</section>
 <section id="smaller-and-smaller-steps">
-<h3>Smaller and smaller steps<a class="headerlink" href="#smaller-and-smaller-steps" title="Permalink to this heading">#</a></h3>
+<h2>Smaller and smaller steps<a class="headerlink" href="#smaller-and-smaller-steps" title="Permalink to this heading">#</a></h2>
 <p>Let us restrict the time during which our human will be making steps and let us denote it as an interval <span class="math notranslate nohighlight">\(I=[0,T]\)</span>, where <span class="math notranslate nohighlight">\(T=1\)</span>. For example we can decide that our human will do <span class="math notranslate nohighlight">\(10\)</span> steps, that means that, starting at zero, after every <span class="math notranslate nohighlight">\(0.1\)</span> our human will make a step either by <span class="math notranslate nohighlight">\(+1\)</span> or by <span class="math notranslate nohighlight">\(-1\)</span>. We will denote with <span class="math notranslate nohighlight">\(N\)</span> the number of steps our human will do in our interval. If we say set that our human moves up or down with equal probability of <span class="math notranslate nohighlight">\(0.5\)</span> then with the code below we will plot some random trajectories for values of <span class="math notranslate nohighlight">\(N=\{10,100,1000\}\)</span>.</p>
 <p>Before that we define a function that draws a trajectory for a given final time <span class="math notranslate nohighlight">\(T\)</span>, the number of steps <span class="math notranslate nohighlight">\(N\)</span>, some starting point <span class="math notranslate nohighlight">\(x_0\)</span> and some size of the step, which is <span class="math notranslate nohighlight">\(1\)</span> by default:</p>
 <div class="cell docutils container">
@@ -481,7 +480,7 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">26</span><span class="p">)</span> <span class="c1"># for reproducibility</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">26</span><span class="p">)</span>
 
 <span class="n">times1</span><span class="p">,</span> <span class="n">trajectory1</span> <span class="o">=</span> <span class="n">random_walk_trajectory</span><span class="p">(</span><span class="n">T</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">x0</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">times2</span><span class="p">,</span> <span class="n">trajectory2</span> <span class="o">=</span> <span class="n">random_walk_trajectory</span><span class="p">(</span><span class="n">T</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">x0</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
@@ -507,7 +506,7 @@ document.write(`
 <p>Let us now try to draw the trajectories for the same values of <span class="math notranslate nohighlight">\(N\)</span>, but with restricted step size <span class="math notranslate nohighlight">\(h=\sqrt{\Delta t}\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">26</span><span class="p">)</span> <span class="c1"># for reproducibility</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">26</span><span class="p">)</span>
 
 <span class="n">times1</span><span class="p">,</span> <span class="n">trajectory1</span> <span class="o">=</span> <span class="n">random_walk_trajectory</span><span class="p">(</span><span class="n">T</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">x0</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">step_size</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">10</span><span class="p">))</span>
 <span class="n">times2</span><span class="p">,</span> <span class="n">trajectory2</span> <span class="o">=</span> <span class="n">random_walk_trajectory</span><span class="p">(</span><span class="n">T</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">x0</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">step_size</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">100</span><span class="p">))</span>
@@ -531,7 +530,6 @@ document.write(`
 <p class="admonition-title">Note</p>
 <p>Now, regardless of <span class="math notranslate nohighlight">\(N\)</span>, our process will be of the <em>same scale</em>.</p>
 </div>
-</section>
 </section>
 <section id="back-to-brownian-motion">
 <h2>Back to Brownian Motion<a class="headerlink" href="#back-to-brownian-motion" title="Permalink to this heading">#</a></h2>
@@ -625,7 +623,7 @@ h &amp; -h \\
 <p>Now we will simulate <span class="math notranslate nohighlight">\(200\)</span> trajectories of Brownian motions and see how they are distributed at time <span class="math notranslate nohighlight">\(T\)</span>. Of course, we expect to see a normal distribution.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">13</span><span class="p">)</span> <span class="c1"># for reproducibility</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">13</span><span class="p">)</span>
 
 <span class="n">T</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">n</span> <span class="o">=</span> <span class="mi">1000</span>
@@ -680,7 +678,7 @@ h &amp; -h \\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/e4035c9984a52854af18acf4cf9dcdfa87f6c4c879a98c4306d0ed9c011278a6.png" src="_images/e4035c9984a52854af18acf4cf9dcdfa87f6c4c879a98c4306d0ed9c011278a6.png" />
+<img alt="_images/4762a85a6683951053b9a3fd5e73c05c1eb63e8c9582d82c1ed900b2d9828186.png" src="_images/4762a85a6683951053b9a3fd5e73c05c1eb63e8c9582d82c1ed900b2d9828186.png" />
 </div>
 </div>
 </section>
@@ -758,10 +756,8 @@ h &amp; -h \\
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#random-walk">Random Walk</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#smaller-and-smaller-steps">Smaller and smaller steps</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#random-walk">Random Walk</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#smaller-and-smaller-steps">Smaller and smaller steps</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#back-to-brownian-motion">Back to Brownian Motion</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-point-of-view">Mathematical point of view</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formal-definition-of-the-brownian-motion">Formal definition of the Brownian Motion</a></li>
