@@ -122,7 +122,7 @@ $$ r_3 = \sqrt[3]{\frac{110}{120 -\frac{10}{1+1.010\%} - \frac{10}{(1+1.015\%)^2
 And with this, we have managed to calculate the zero rates ($r_i$) for maturities $[1,2,3]$. Now if we would add a **Bond D**, which matures in 4 years from now, we could calculate the zero rate $r_4$, and so on with higher maturities. 
 
 ```{important}
-This process of obtaining zero rates is called **Bootstrapping**
+This process of obtaining zero rates is called **bootstrapping**
 ```
 
 ### Faster way to obtain zero rates
@@ -131,9 +131,9 @@ Let us list again the equations for our bonds B, A, and C:
 
 $$
 \begin{split}
-99 &= \frac{100}{1+r_1} &\\
-98 &=  & \frac{100}{(1+r_2)^2} & \\
-120 &= \frac{10}{1+r_1} &+ \frac{10}{(1+r_2)^2} + \frac{110}{(1+r_3)^{3}}
+99 &= \frac{100}{1+r_1} \\
+98 &= \frac{100}{(1+r_2)^2} \\
+120 &= \frac{10}{1+r_1} + \frac{10}{(1+r_2)^2} + \frac{110}{(1+r_3)^{3}}
 \end{split}
 $$
 

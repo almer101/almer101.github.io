@@ -31,7 +31,7 @@ x = [1,2,3,5,10,20,30]
 y_ts = [2,2.37,2.53,2.6,2.67,2.77,2.85]
 plot_data(x,y_ts)
 plt.ylim(1.8, 3)
-plt.ylabel('Zero rate')
+plt.ylabel('Zero rate ($\%$)')
 plt.xlabel('Maturity')
 
 plt.savefig('../imgs/ts.png', transparent=True)
@@ -40,7 +40,7 @@ plt.show()
 plot_data(x,y, label='Yield curve')
 plot_data(x,y_ts, label='Term structure')
 plt.ylim(1.8, 3)
-plt.ylabel('Zero rate')
+plt.ylabel('Rate ($\%$)')
 plt.xlabel('Maturity')
 plt.legend()
 plt.savefig('../imgs/yc_ts.png', transparent=True)
