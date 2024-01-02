@@ -498,7 +498,7 @@ document.write(`
 <p>And with this, we have managed to calculate the zero rates (<span class="math notranslate nohighlight">\(r_i\)</span>) for maturities <span class="math notranslate nohighlight">\([1,2,3]\)</span>. Now if we would add a <strong>Bond D</strong>, which matures in 4 years from now, we could calculate the zero rate <span class="math notranslate nohighlight">\(r_4\)</span>, and so on with higher maturities.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>This process of obtaining zero rates is called <strong>Bootstrapping</strong></p>
+<p>This process of obtaining zero rates is called <strong>bootstrapping</strong></p>
 </div>
 </section>
 <section id="faster-way-to-obtain-zero-rates">
@@ -507,9 +507,9 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{split}
-99 &amp;= \frac{100}{1+r_1} &amp;\\
-98 &amp;=  &amp; \frac{100}{(1+r_2)^2} &amp; \\
-120 &amp;= \frac{10}{1+r_1} &amp;+ \frac{10}{(1+r_2)^2} + \frac{110}{(1+r_3)^{3}}
+99 &amp;= \frac{100}{1+r_1} \\
+98 &amp;= \frac{100}{(1+r_2)^2} \\
+120 &amp;= \frac{10}{1+r_1} + \frac{10}{(1+r_2)^2} + \frac{110}{(1+r_3)^{3}}
 \end{split}
 \end{split}\]</div>
 <p>This is a system of equations and whenever we have a system of equations we can use matrix notation to write it down:</p>
