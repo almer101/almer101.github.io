@@ -6,14 +6,14 @@ root: intro
 parts:
   - caption: Stochastic Processes
     chapters:
-    - file: mymarkdownfile
-    - file: brownian_motion
-    - file: generalized_brownian_motion
+    - file: stochastic_processes/brownian_motion
+    - file: stochastic_processes/generalized_brownian_motion
   - caption: Fixed Income
     chapters:
-    - file: floating_rate_bonds
-  - caption: Auto-Generated Part
-    chapters:
-    - file: notebooks
-    - file: markdown
-    - file: markdown-notebooks      
+    - file: fixed_income/yc_and_ts
+    # - file: fixed_income/floating_rate_bonds
+  # - caption: Auto-Generated Part
+  #   chapters:
+  #   - file: notebooks
+  #   - file: markdown
+  #   - file: markdown-notebooks      
