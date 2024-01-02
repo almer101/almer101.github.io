@@ -35,6 +35,12 @@ Feel free to get in touch with me through any of my accounts or check out my CV:
 - [The Crane Problem](https://github.com/almer101/crane-problem)
 - [AI algorithms](https://github.com/almer101/AI-algorithms)
 
+## Content to come
+
+- Probability basics
+- Probability advanced
+- Programming and Data Structures
+
 ## Check out the content that is available!
 
 ```{tableofcontents}

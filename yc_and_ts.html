@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Notebooks with MyST Markdown &#8212; My sample book</title>
+    <title>Yield Curve, Zero rates and Term Structure &#8212; My sample book</title>
   
   
   
@@ -63,7 +63,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"], "expec": ["\\mathbb{E}\\left[#1\\right]", 1], "expecc": ["\\mathbb{E}^\\mathbb{#1}\\left[#2\\right]", 2]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'markdown-notebooks';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'yc_and_ts';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -158,12 +158,20 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Stochastic Processes</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="stochastic_processes/mymarkdownfile.html">Hola Maria</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stochastic_processes/content_to_come.html">Content to come</a></li>
 <li class="toctree-l1"><a class="reference internal" href="stochastic_processes/brownian_motion.html">Brownian Motion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="stochastic_processes/generalized_brownian_motion.html">Generalized Brownian Motion (TBC)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stochastic_processes/generalized_brownian_motion.html">Generalized Brownian Motion</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Fixed Income</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="fixed_income/yc_and_ts.html">Yield Curve, Zero Rates, and Term Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fixed_income/floating_rate_bonds.html">Floating Rate Coupon Bonds</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Auto-Generated Part</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Content with notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown.html">Markdown Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
 </ul>
 
     </div>
@@ -235,7 +243,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fmarkdown-notebooks.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fyc_and_ts.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -265,7 +273,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/markdown-notebooks.md" target="_blank"
+      <li><a href="_sources/yc_and_ts.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -347,7 +355,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Notebooks with MyST Markdown</h1>
+    <h1>Yield Curve, Zero rates and Term Structure</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -357,9 +365,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-example-cell">An example cell</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-notebook-with-myst-markdown">Create a notebook with MyST Markdown</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quickly-add-yaml-metadata-for-myst-notebooks">Quickly add YAML metadata for MyST Notebooks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bonds">Bonds</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#yield-to-maturity-ytm">Yield to Maturity (YTM)</a></li>
 </ul>
             </nav>
         </div>
@@ -371,54 +379,91 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="notebooks-with-myst-markdown">
-<h1>Notebooks with MyST Markdown<a class="headerlink" href="#notebooks-with-myst-markdown" title="Permalink to this heading">#</a></h1>
-<p>Jupyter Book also lets you write text-based notebooks using MyST Markdown.
-See <a class="reference external" href="https://jupyterbook.org/file-types/myst-notebooks.html">the Notebooks with MyST Markdown documentation</a> for more detailed instructions.
-This page shows off a notebook written in MyST Markdown.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="yield-curve-zero-rates-and-term-structure">
+<h1>Yield Curve, Zero rates and Term Structure<a class="headerlink" href="#yield-curve-zero-rates-and-term-structure" title="Permalink to this heading">#</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
+<p>Before starting my studies in Quantitative Finance I was working for a while in the banking sector and I was able to see some interesting topics other divisions were working on. The Fixed Income division, among the others, is the one that caught my attention. There was just one problem - I was able to understand very little of what they would be discussing or talking about. Some of the topics that I remember hearing a lot about were <strong>yield curve</strong> and <strong>forward rates</strong>.</p>
+<p>Yield curve was the winner between the two when it comes to the number of times it was mentioned. Without a strong background in Finance I knew very little about what the yield curve actually is and even less about what it tells us.</p>
+<p>With time, I have come to gain a fairly good grasp of what it is and also what it is not, and the aim of this article is to share my knowledge with hope that someone who is in a similar situation as I was two years ago may find it useful :)</p>
+</section>
+<section id="bonds">
+<h2>Bonds<a class="headerlink" href="#bonds" title="Permalink to this heading">#</a></h2>
+<p>To be able to understand what kind information is contained in the yield curve, we must have a look at a bonds. Bond is an instrument used to issue debt which promises a payment (or a series of payments) of fixed amounts at fixed future dates. We can differentiate between:</p>
+<ul class="simple">
+<li><p>Zero Coupon (ZC) Bonds</p></li>
+<li><p>Coupon Bonds with <strong>fixed coupons</strong></p></li>
+<li><p>Coupon Bonds with <strong>floating coupons</strong></p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We will have a brief look at ZC bonds and coupon bonds with <strong>fixed coupons</strong>, while the floating coupon bonds will be covered in another article.</p>
+</div>
+<p>ZC bond is the simplest possible bond, and it promises a single fixed payment at some future date which is called the <strong>maturity</strong>. The money received at maturity is called the principal of the bond and it is (usually) set to be equal to 100. You can imagine a ZC bond as a piece of paper that holds the following information:</p>
+<ul class="simple">
+<li><p><strong>Issuer</strong>: The party that wrote that paper and is selling it</p></li>
+<li><p><strong>Maturity date</strong>: The date at which the principal will be repaid</p></li>
+<li><p><strong>Principal amount</strong>: Usually is 100</p></li>
+</ul>
+<p>Imagine that there exists a bond which promises a payment of <span class="math notranslate nohighlight">\(100\)</span> in exactly two years from now and that such bond is currently trading at the price of <span class="math notranslate nohighlight">\(98\)</span>. That means that if I buy that bond now for <span class="math notranslate nohighlight">\(98\)</span> I will have <span class="math notranslate nohighlight">\(100\)</span> in two years, so I can calculate what is the return (<span class="math notranslate nohighlight">\(r\)</span>) of such investment:</p>
 <div class="math notranslate nohighlight">
-\[\int_0^2 3x^2 dx = 8\]</div>
+\[98 = \frac{100}{(1+r)^2} \Rightarrow r = \sqrt{\frac{100}{98}}-1\approx 1.015\%\]</div>
+<p>The annualized return of such investment would be <span class="math notranslate nohighlight">\(1.015\%\)</span>.</p>
+<p>Now let us examine a bond that promises a payment of <span class="math notranslate nohighlight">\(100\)</span> in exactly two years, but this time we would also receive a coupon amounting to <span class="math notranslate nohighlight">\(5\)</span> every 6 months (including the maturity). If such a bond is trading at <span class="math notranslate nohighlight">\(99\)</span> and we wanted to calculate the return of such invesment we would need to determine what value of <span class="math notranslate nohighlight">\(r\)</span> satisfies the following equation:</p>
 <div class="math notranslate nohighlight">
-\[\expecc{Q}{X_t|X_s} = \expecc{Q}{X_t - X_s + X_s|X_s}\]</div>
-<section id="an-example-cell">
-<h2>An example cell<a class="headerlink" href="#an-example-cell" title="Permalink to this heading">#</a></h2>
-<p>With MyST Markdown, you can define code cells with a directive like so:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
-</pre></div>
-</div>
-</div>
-</div>
-<p>When your book is built, the contents of any <code class="docutils literal notranslate"><span class="pre">{code-cell}</span></code> blocks will be
-executed with your default Jupyter kernel, and their outputs will be displayed
-in-line with the rest of your content.</p>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p>Jupyter Book uses <a class="reference external" href="https://jupytext.readthedocs.io/en/latest/">Jupytext</a> to convert text-based files to notebooks, and can support <a class="reference external" href="https://jupyterbook.org/file-types/jupytext.html">many other text-based notebook files</a>.</p>
+\[99 = \frac{5}{(1+r)^{0.5}} + \frac{5}{(1+r)^1} + \frac{5}{(1+r)^{1.5}} + \frac{105}{(1+r)^2}\]</div>
+<p>This is not so easy to calculate as in the example above, but there are numerical procedures that would give us the result. Luckily, this is something that you would never calculate yourself. Why? Because this is already provided by many data vendors like Bloomberg or Refinitiv. My goal here was to show conceptually how that number is calculated.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you are curious, you can use one of the many calculators available online that will calculate this for you. The one I used calculated that the return of such investment is</p>
+<div class="math notranslate nohighlight">
+\[r = 10.57\%\]</div>
 </div>
 </section>
-<section id="create-a-notebook-with-myst-markdown">
-<h2>Create a notebook with MyST Markdown<a class="headerlink" href="#create-a-notebook-with-myst-markdown" title="Permalink to this heading">#</a></h2>
-<p>MyST Markdown notebooks are defined by two things:</p>
-<ol class="arabic simple">
-<li><p>YAML metadata that is needed to understand if / how it should convert text files to notebooks (including information about the kernel needed).
-See the YAML at the top of this page for example.</p></li>
-<li><p>The presence of <code class="docutils literal notranslate"><span class="pre">{code-cell}</span></code> directives, which will be executed with your book.</p></li>
-</ol>
-<p>That’s all that is needed to get started!</p>
-</section>
-<section id="quickly-add-yaml-metadata-for-myst-notebooks">
-<h2>Quickly add YAML metadata for MyST Notebooks<a class="headerlink" href="#quickly-add-yaml-metadata-for-myst-notebooks" title="Permalink to this heading">#</a></h2>
-<p>If you have a markdown file and you’d like to quickly add YAML metadata to it, so that Jupyter Book will treat it as a MyST Markdown Notebook, run the following command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span><span class="o">-</span><span class="n">book</span> <span class="n">myst</span> <span class="n">init</span> <span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">markdownfile</span><span class="o">.</span><span class="n">md</span>
-</pre></div>
-</div>
+<section id="yield-to-maturity-ytm">
+<h2>Yield to Maturity (YTM)<a class="headerlink" href="#yield-to-maturity-ytm" title="Permalink to this heading">#</a></h2>
+<p>Now that we have covered how to calculate the return, we need to say what that number is. Very simply, the return <span class="math notranslate nohighlight">\(r\)</span> is called <strong>yield to maturity</strong> and it is a rate of return that the investor would realize if the investor was to hold the bond until maturity.</p>
+<p>Now imagine that instead of only one bond with two years maturity, we have a whole set of bonds with different maturities. For example let us imagine this set of bonds (with their YTMs calculated like we did above):</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Bond</p></th>
+<th class="head text-center"><p>Maturity (in years)</p></th>
+<th class="head text-left"><p>YTM</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>Bond A</p></td>
+<td class="text-center"><p>1</p></td>
+<td class="text-left"><p>2%</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>Bond B</p></td>
+<td class="text-center"><p>2</p></td>
+<td class="text-left"><p>2.35%</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>Bond C</p></td>
+<td class="text-center"><p>3</p></td>
+<td class="text-left"><p>2.5%</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>Bond D</p></td>
+<td class="text-center"><p>5</p></td>
+<td class="text-left"><p>2.56%</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>Bond E</p></td>
+<td class="text-center"><p>10</p></td>
+<td class="text-left"><p>2.6%</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>Bond F</p></td>
+<td class="text-center"><p>20</p></td>
+<td class="text-left"><p>2.65%</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>Bond G</p></td>
+<td class="text-center"><p>30</p></td>
+<td class="text-left"><p>2.67%</p></td>
+</tr>
+</tbody>
+</table>
+<p>If we would now plot these YTMs against the maturity we would get the following result.
+<img alt="Yield Curve" src="_images/yc.svg" /></p>
 </section>
 </section>
 
@@ -471,9 +516,9 @@ See the YAML at the top of this page for example.</p></li>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-example-cell">An example cell</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-notebook-with-myst-markdown">Create a notebook with MyST Markdown</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quickly-add-yaml-metadata-for-myst-notebooks">Quickly add YAML metadata for MyST Notebooks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bonds">Bonds</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#yield-to-maturity-ytm">Yield to Maturity (YTM)</a></li>
 </ul>
   </nav></div>
 
