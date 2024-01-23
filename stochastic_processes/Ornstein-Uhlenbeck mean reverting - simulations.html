@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Content to come &#8212; My sample book</title>
+    <title>Bond prices under the Ornstein Uhlenbeck mean-reverting process &#8212; My sample book</title>
   
   
   
@@ -61,7 +61,9 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'stochastic_processes/content_to_come';</script>
+    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"], "expec": ["\\mathbb{E}\\left[#1\\right]", 1], "expecc": ["\\mathbb{E}^\\mathbb{#1}\\left[#2\\right]", 2]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'stochastic_processes/Ornstein-Uhlenbeck mean reverting - simulations';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -237,7 +239,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fstochastic_processes/content_to_come.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fstochastic_processes/Ornstein-Uhlenbeck mean reverting - simulations.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -267,7 +269,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/stochastic_processes/content_to_come.md" target="_blank"
+      <li><a href="../_sources/stochastic_processes/Ornstein-Uhlenbeck mean reverting - simulations.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -277,7 +279,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -336,7 +338,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -347,11 +351,22 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Content to come</h1>
+    <h1>Bond prices under the Ornstein Uhlenbeck mean-reverting process</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bond-price">Bond price</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#risk-neutral-probability-measure-mathbb-q">Risk neutral probability measure <span class="math notranslate nohighlight">\(\mathbb{Q}\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-the-sde">Solving the SDE</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -361,13 +376,81 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="content-to-come">
-<h1>Content to come<a class="headerlink" href="#content-to-come" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="bond-prices-under-the-ornstein-uhlenbeck-mean-reverting-process">
+<h1>Bond prices under the Ornstein Uhlenbeck mean-reverting process<a class="headerlink" href="#bond-prices-under-the-ornstein-uhlenbeck-mean-reverting-process" title="Permalink to this heading">#</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
+<p>The OU mean-reverting process is often used to model interest rates and for this reason we will call our stochastic process <span class="math notranslate nohighlight">\(r\)</span>. This process is characterized by the following stochastic differential equation (SDE):</p>
+<div class="math notranslate nohighlight">
+\[dr_t = k(m-r_t)dt + \sigma dW^\mathbb{P}_t\]</div>
+<p>where <span class="math notranslate nohighlight">\(W^\mathbb{P}\)</span> is the <span class="math notranslate nohighlight">\(\mathbb{P}\)</span>-standard Brownian motion and <span class="math notranslate nohighlight">\(\mathbb{P}\)</span> is the historical probability. The parameters above represent:</p>
 <ul class="simple">
-<li><p>Probability basics</p></li>
-<li><p>Probability advanced</p></li>
-<li><p>Programming and Data Structures</p></li>
+<li><p><span class="math notranslate nohighlight">\(k\)</span> characterizes the speed of mean reversion</p></li>
+<li><p><span class="math notranslate nohighlight">\(m\)</span> is the long-run mean of the rate <span class="math notranslate nohighlight">\(r_t\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\sigma\)</span> is the volatility of the interest rate</p></li>
 </ul>
+</section>
+<section id="bond-price">
+<h2>Bond price<a class="headerlink" href="#bond-price" title="Permalink to this heading">#</a></h2>
+<p>A differential equation that describes the change in the value of a riskless asset (in our case we will assume that bonds are riskless) is given by:</p>
+<div class="math notranslate nohighlight">
+\[\frac{dB(t)}{B(t)} = r_t dt\]</div>
+<p>where we usually set an initial condition <span class="math notranslate nohighlight">\(B(0)=1\)</span>. This differential equation is easily solved and gives us the expression for the value of 1 unit of the riskless asset at any time <span class="math notranslate nohighlight">\(t\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[B(t) = B(0)\exp{\left(\int_0^t r_u du\right)} = \exp{\left(\int_0^t r_u du\right)}\]</div>
+<p>Keep in mind that in case that <span class="math notranslate nohighlight">\(r\)</span> is constant, this formula collapses to <span class="math notranslate nohighlight">\(B(t)=e^{rt}\)</span>, but that is not very interesting, and we will now try to tame the stochastic process and see the expression for calculating the bond price when we have a stochastic interest rate.</p>
+<p>With the formula above we also know the expression for the present value of a 1 unit of money being paid at time <span class="math notranslate nohighlight">\(t\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[B(0) = \exp{\left(-\int_0^t r_u du\right)}\]</div>
+<p>Since an integral of a stochastic process is a random variable, we can calculate the today’s price <span class="math notranslate nohighlight">\(p(0,t)\)</span> of 1 unit maturing at time <span class="math notranslate nohighlight">\(t\)</span> as a risk-neutral expectation of the above expression, that is:</p>
+<div class="math notranslate nohighlight">
+\[p(0,t) = \mathbb{E}^\mathbb{Q}\left( e^{-\int_0^t r_u du} \right)\]</div>
+<p>The goal of this post will be the calculation of that expected value. Here we have 2 problems to tackle:</p>
+<ul class="simple">
+<li><p>Finding the risk-neutral probability measure</p></li>
+<li><p>Finding the distribution of <span class="math notranslate nohighlight">\((e^{-\int_0^t r_u du})\)</span></p></li>
+</ul>
+</section>
+<section id="risk-neutral-probability-measure-mathbb-q">
+<h2>Risk neutral probability measure <span class="math notranslate nohighlight">\(\mathbb{Q}\)</span><a class="headerlink" href="#risk-neutral-probability-measure-mathbb-q" title="Permalink to this heading">#</a></h2>
+<p>Risk neutral probability measure is usually obtained such that we look at the discounted gain process of a risky security in the market and adjust the drift of <span class="math notranslate nohighlight">\(W^\mathbb{P}\)</span> to obtain <span class="math notranslate nohighlight">\(W^\mathbb{Q}\)</span>. Here we, of course, rely on the <a class="reference external" href="https://en.wikipedia.org/wiki/Girsanov_theorem">Girsanov theorem</a> that states that given a Brownian motion under <span class="math notranslate nohighlight">\(\mathbb{P}\)</span>, if we can find an adapted process <span class="math notranslate nohighlight">\(\nu_t\)</span> such that <a class="reference external" href="https://en.wikipedia.org/wiki/Novikov%27s_condition">Novikov condition</a> holds, then the following process is a Brownian motion under the new probability measure <span class="math notranslate nohighlight">\(\mathbb{Q}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[dW_t^\mathbb{Q} = \nu_t dt + dW_t^\mathbb{P}\]</div>
+<p>This is a very powerful result, and it allows us to price financial products. We will assume here that the market price of risk is $<span class="math notranslate nohighlight">\(\nu_t = \nu = \frac{\mu_S-r}{\sigma_S}\)</span>$</p>
+<p>where <span class="math notranslate nohighlight">\(\mu_S,r,\sigma_S\)</span> are constants which results in our <span class="math notranslate nohighlight">\(\nu\)</span> being a constant as well. For constants, the Novikov condition holds:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather}
+\mathbb{E}\left[ \exp\left( \int_0^T \nu^2ds \right)\right] &lt; +\infty \\
+\mathbb{E}\left[ \exp\left( \nu^2 (T-0) \right)\right] &lt; +\infty \\
+e^{\nu^2 T} &lt; +\infty \\
+\end{gather}
+\end{split}\]</div>
+<p>Then we know that <span class="math notranslate nohighlight">\(W_t^\mathbb{P}\)</span> can be written as:</p>
+<div class="math notranslate nohighlight">
+\[dW_t^\mathbb{P} = -\nu dt + dW_t^\mathbb{Q}\]</div>
+</section>
+<section id="solving-the-sde">
+<h2>Solving the SDE<a class="headerlink" href="#solving-the-sde" title="Permalink to this heading">#</a></h2>
+<p>Let us now plug that in the initial SDE:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather}
+dr_t = k(m-r_t)dt + \sigma(-\nu dt + dW_t^\mathbb{Q}) \\
+dr_t = k(m-\frac{\sigma\nu}{k}-r_t)dt + \sigma dW_t^\mathbb{Q}
+\end{gather}
+\end{split}\]</div>
+<p>where we denote with <span class="math notranslate nohighlight">\(\vartheta=(m-\frac{\sigma\nu}{k})\)</span> the long-run mean of the interest rate <span class="math notranslate nohighlight">\(r_t\)</span> under the risk neutral probability measure <span class="math notranslate nohighlight">\(\mathbb{Q}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[dr_t = k(\vartheta-r_t)dt + \sigma dW_t^\mathbb{Q}\]</div>
+<p>This SDE has a famous solution that is achieved when assuming a transformation of the initial process <span class="math notranslate nohighlight">\(f(t, r_t)=r_t\cdot e^{kt}\)</span>, and an initial condition of <span class="math notranslate nohighlight">\(r(0)=r_0\)</span>. This is left to the reader as an exercie, but the solution will be provided down in the Appendix, in case this is one of the first times you are encountering SDEs. Anyhow, the solution for this process can be obtained and is:</p>
+<div class="math notranslate nohighlight">
+\[r_t=e^{-kt}(r_0-\vartheta) + \vartheta + \sigma \int_0^t e^{-k(t-u)}dW_u^\mathbb{Q}\]</div>
+<p>It is important to note that the stochastic integral we have in the end is just a <strong>random variable</strong>. This seems silly to mention, but when I was studying stochastic processes, this really helped me to not be frightened by such <em>“weird”</em> integrals. In fact this is a very tamable version of a stochastic integral, because thanks to <strong>Ito’s isometry</strong> property we know that the distribution of this integral is normal:</p>
+<div class="math notranslate nohighlight">
+\[\int_0^t e^{-k(t-u)}dW_u^\mathbb{Q} \sim \mathcal{N}\left(0, \int_0^t \left(e^{-k(t-u)}\right)^2 du\right) \sim \mathcal{N}\left( 0, \frac{1-e^{-2kt}}{2k} \right)\]</div>
+<p>Let us denote that stochastic integral as a random variable <span class="math notranslate nohighlight">\(Y_t\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\int_0^t e^{-k(t-u)}dW_u^\mathbb{Q} = Y_t\]</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -410,6 +493,23 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bond-price">Bond price</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#risk-neutral-probability-measure-mathbb-q">Risk neutral probability measure <span class="math notranslate nohighlight">\(\mathbb{Q}\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-the-sde">Solving the SDE</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
