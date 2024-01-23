@@ -117,10 +117,9 @@ First we need to find out the distribution of our stochastic integral $\left(\in
 
 $$
 \begin{split}
-	-\int_0^t r_u du &= -\left[ r_0\int_0^t e^{-ku}du + \vartheta \int_0^t(1-e^{-ku})du + \sigma\int_0^t Y_u du \right]\\
-	&= -\left[ -r_0\frac{1}{k}(e^{-kt}-1) + \vartheta t + \vartheta\frac{1}{k}(e^{-kt}-1) + \sigma\int_0^t Y_u du\right]\\ 
-	&= -\left[ \frac{1}{k}(e^{-kt}-1)(\vartheta - r_0) + \vartheta t \sigma\int_0^t Y_u du \right] \\
-	&= \frac{1}{k}(1-e^{-kt})(\vartheta - r_0) -\vartheta t - \sigma\int_0^t Y_u du
+	\int_0^t r_u du &= r_0\int_0^t e^{-ku}du + \vartheta \int_0^t(1-e^{-ku})du + \sigma\int_0^t Y_u du \\
+	&= -r_0\frac{1}{k}(e^{-kt}-1) + \vartheta t + \vartheta\frac{1}{k}(e^{-kt}-1) + \sigma\int_0^t Y_u du\\ 
+	&= \frac{1}{k}(e^{-kt}-1)(\vartheta - r_0) + \vartheta t + \sigma\int_0^t Y_u du
 \end{split}
 $$
 
@@ -176,22 +175,56 @@ $$
 \end{split}
 $$
 
-And with this we have calculated the variance. So with this result now, we know the exact distribution of our $\left(-\int_0^t r_u du\right)$. Let use the following notation
+And with this we have calculated the variance. So with this result now, we know the exact distribution of our $\left(\int_0^t r_u du\right)$. Let use the following notation
 
 $$R_t = \int_0^t r_u du$$
 
 And then we can write the expression from above once again:
 
-$$-R_t = \frac{1}{k}(1-e^{-kt})(\vartheta - r_0) -\vartheta t - \sigma\int_0^t Y_u du$$
+$$R_t = \frac{1}{k}(e^{-kt}-1)(\vartheta - r_0) + \vartheta t + \sigma\int_0^t Y_u du$$
 
 Now we can calculate the mean and the variance of $(-R_t)$:
 
-$$\mathbb{E}^\mathbb{Q}(-R_t) = \frac{1}{k}(1-e^{-kt})(\vartheta - r_0) -\vartheta t = \mu_R$$
+$$\mathbb{E}^\mathbb{Q}(R_t) = \frac{1}{k}(e^{-kt}-1)(\vartheta - r_0) + \vartheta t = \mu_R$$
 
-$$Var^\mathbb{Q}(-R_t) = \sigma^2 \cdot Var^\mathbb{Q}\left( \int_0^t Y_u du\right)  = \frac{\sigma^2}{2k^2} \left( 2kt-3+4e^{-kt}-e^{-2kt}  \right) = \sigma_R$$
+$$Var^\mathbb{Q}(-R_t) = \sigma^2 \cdot Var^\mathbb{Q}\left( \int_0^t Y_u du\right)  = \frac{\sigma^2}{2k^2} \left( 2kt-3+4e^{-kt}-e^{-2kt}  \right) = \sigma_R^2$$
 
-Let us use the following notation: 
+So to put it compactly:
 
+$$R_t \sim \mathcal{N}\left(\mu_R, \sigma_R^2\right)$$
 
+## Calculating the bond price
 
-$$-R_t \sim \mathcal{N}\left(\mu_R, \sigma_R\right)$$
+As we have stated in the beginning, the today's price of one unit of money that is paid at time $t$ is given by:
+
+$$p(0,t) = \mathbb{E}^\mathbb{Q}\left( e^{-\int_0^t r_u du} \right) = \mathbb{E}^\mathbb{Q}\left( e^{-R_t} \right)$$
+
+But since $R_t$ is normally distributed, we know how to calculate the expected value of a function where a normal random variable is the exponent:
+
+$$
+\begin{gather}
+	p(0,t) = \mathbb{E}^\mathbb{Q}\left( e^{-R_t} \right) = e^{\mu_R+\frac{1}{2}\sigma_R^2} \\
+	p(0,t) = \exp\left( \frac{1}{k}(e^{-kt}-1)(\vartheta - r_0) + \vartheta t + \frac{\sigma^2}{4k^2} \left( 2kt-3+4e^{-kt}-e^{-2kt}  \right) \right)
+\end{gather}
+$$
+
+So given the current level of the rate $r_0$, and the parameters $k,\sigma,\vartheta$ we can calculate the risk neutral price of our bond. So for example, if our bond A pays 100 in two years time, the current price of the bond would be:
+
+$$P_A = 100\cdot p(0,1) = 100\cdot \exp\left( \frac{1}{k}(e^{-2k}-1)(\vartheta - r_0) + 2\vartheta + \frac{\sigma^2}{4k^2} \left( 4k-3+4e^{-2k}-e^{-4k}  \right) \right)$$
+
+## Concluding notes
+
+This is a very interesting experience in my opinion, because it shows how to calculate the expression of a risk-neutral bond price. Often you do not actually have the parameters at hand, but rather you need to calculate them from the data. This would then be an optimization problem where you want to find $\hat{\Theta} = (k,\sigma,\vartheta)$, such that it minimizes the squared distances of market prices of bonds and the theoretical prices calculated with the formula above. More specifically, the problem would be: 
+
+$$
+\begin{split}	
+	\hat{\Theta} := \arg \min_\Theta \sum \left( p_{market} - p_{theoretical} \right)^2
+\end{split}
+$$
+
+where $p_{theoretical}$ is the theoretical price obtained with the formula for $p(0,t)$.
+
+## References
+
+- [The Trending Ornstein-Uhlenbeck process: A technical note](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3263789)
+- Bocconi Lectures on Computational Methods in Finance

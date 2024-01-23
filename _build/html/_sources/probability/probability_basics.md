@@ -225,5 +225,5 @@ In our case, however, the $X_i$ are independent and we can easily calculate the 
 
 $$Var(Y) = \sum_{i=1}^5 Var(X_i) + 2\sum_{i<j}0 = \sum_{i=1}^5 Var(X_i) = 5 \cdot \frac{35}{12} \approx 14.58$$
 
-## Conditional probability
+<!--## Conditional probability-->
 
