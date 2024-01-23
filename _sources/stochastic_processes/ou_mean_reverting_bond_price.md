@@ -123,11 +123,7 @@ $$
 \end{split}
 $$
 
-Since $Y_t$ are normally distributed, their sum would also be normally distributed, and since integral is an infinite sum, the element $\left( \int_0^t Y_u du \right)$ is also normally distributed. Moreover, we know that the mean of $Y_t$ is zero, so the mean of the integral will also be zero. The only thing that is still unknown is the variance:
-
-$$\int_0^t Y_u du \sim \mathcal{N}(0, \sigma_t)$$
-
-Before jumping in the calculation of variance, let us calculate the covariance between two $Y_u$ and $Y_s$:
+Since $Y_t$ are normally distributed, their sum would also be normally distributed, and since integral is an infinite sum, the element $\left( \int_0^t Y_u du \right)$ is also **normally distributed**. Moreover, we know that the mean of $Y_t$ is zero, so the mean of the integral will also be zero. Before jumping in the calculation of variance, let us calculate the covariance between two $Y_u$ and $Y_s$:
 
 $$
 \begin{split}
