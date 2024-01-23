@@ -1,0 +1,107 @@
+---
+jupytext:
+  formats: md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+    format_version: 0.13
+    jupytext_version: 1.11.5
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
+# Bond prices under the Ornstein Uhlenbeck mean-reverting process
+
+
+## Introduction
+The OU mean-reverting process is often used to model interest rates and for this reason we will call our stochastic process $r$. This process is characterized by the following stochastic differential equation (SDE):
+
+$$dr_t = k(m-r_t)dt + \sigma dW^\mathbb{P}_t$$
+
+where $W^\mathbb{P}$ is the $\mathbb{P}$-standard Brownian motion and $\mathbb{P}$ is the historical probability. The parameters above represent: 
+
+- $k$ characterizes the speed of mean reversion
+- $m$ is the long-run mean of the rate $r_t$ 
+- $\sigma$ is the volatility of the interest rate
+
+
+## Bond price
+
+A differential equation that describes the change in the value of a riskless asset (in our case we will assume that bonds are riskless) is given by:
+
+$$\frac{dB(t)}{B(t)} = r_t dt$$
+
+where we usually set an initial condition $B(0)=1$. This differential equation is easily solved and gives us the expression for the value of 1 unit of the riskless asset at any time $t$:
+
+$$B(t) = B(0)\exp{\left(\int_0^t r_u du\right)} = \exp{\left(\int_0^t r_u du\right)}$$
+
+```{note}
+Keep in mind that in case that $r$ is constant, this formula collapses to $B(t)=e^{rt}$, but that is not very interesting, and we will now try to tame the stochastic process and see the expression for calculating the bond price when we have a stochastic interest rate. 
+```
+
+With the formula above we also know the expression for the present value of a 1 unit of money being paid at time $t$: 
+
+$$B(0) = \exp{\left(-\int_0^t r_u du\right)}$$
+
+Since an integral of a stochastic process is a random variable, we can calculate the today's price $p(0,t)$ of 1 unit maturing at time $t$ as a risk-neutral expectation of the above expression, that is:
+
+$$p(0,t) = \mathbb{E}^\mathbb{Q}\left( e^{-\int_0^t r_u du} \right)$$
+
+The goal of this post will be the calculation of that expected value. Here we have 2 problems to tackle: 
+
+- Finding the risk-neutral probability measure
+- Finding the distribution of $(e^{-\int_0^t r_u du})$
+
+
+## Risk neutral probability measure $\mathbb{Q}$
+
+Risk neutral probability measure is usually obtained such that we look at the discounted gain process of a risky security in the market and adjust the drift of $W^\mathbb{P}$ to obtain $W^\mathbb{Q}$. Here we, of course, rely on the [Girsanov theorem](https://en.wikipedia.org/wiki/Girsanov_theorem) that states that given a Brownian motion under $\mathbb{P}$, if we can find an adapted process $\nu_t$ such that [Novikov condition](https://en.wikipedia.org/wiki/Novikov%27s_condition) holds, then the following process is a Brownian motion under the new probability measure $\mathbb{Q}$: 
+
+$$dW_t^\mathbb{Q} = \nu_t dt + dW_t^\mathbb{P}$$
+
+This is a very powerful result, and it allows us to price financial products. We will assume here that the market price of risk is $$\nu_t = \nu = \frac{\mu_S-r}{\sigma_S}$$
+
+where $\mu_S,r,\sigma_S$ are constants which results in our $\nu$ being a constant as well. For constants, the Novikov condition holds: 
+
+$$\begin{gather}
+\mathbb{E}\left[ \exp\left( \int_0^T \nu^2ds \right)\right] < +\infty \\
+\mathbb{E}\left[ \exp\left( \nu^2 (T-0) \right)\right] < +\infty \\
+e^{\nu^2 T} < +\infty \\
+\end{gather}
+$$
+
+Then we know that $W_t^\mathbb{P}$ can be written as: 
+
+$$dW_t^\mathbb{P} = -\nu dt + dW_t^\mathbb{Q}$$
+
+## Solving the SDE
+Let us now plug that in the initial SDE: 
+
+$$\begin{gather}
+dr_t = k(m-r_t)dt + \sigma(-\nu dt + dW_t^\mathbb{Q}) \\
+dr_t = k(m-\frac{\sigma\nu}{k}-r_t)dt + \sigma dW_t^\mathbb{Q}
+\end{gather}
+$$
+
+where we denote with $\vartheta=(m-\frac{\sigma\nu}{k})$ the long-run mean of the interest rate $r_t$ under the risk neutral probability measure $\mathbb{Q}$:
+
+$$dr_t = k(\vartheta-r_t)dt + \sigma dW_t^\mathbb{Q}$$
+
+This SDE has a famous solution that is achieved when assuming a transformation of the initial process $f(t, r_t)=r_t\cdot e^{kt}$, and an initial condition of $r(0)=r_0$. This is left to the reader as an exercie, but the solution will be provided down in the Appendix, in case this is one of the first times you are encountering SDEs. Anyhow, the solution for this process can be obtained and is:
+
+$$r_t=e^{-kt}(r_0-\vartheta) + \vartheta + \sigma \int_0^t e^{-k(t-u)}dW_u^\mathbb{Q}$$
+
+```{note}
+The stochastic integral we have in the end is just a **random variable**. This seems silly to mention, but when I was studying stochastic processes, this really helped me to not be frightened by such *"weird"* integrals. 
+```
+
+In fact this is a very tamable version of a stochastic integral, because thanks to **Ito's isometry** property we know that the distribution of this integral is normal: 
+
+$$\int_0^t e^{-k(t-u)}dW_u^\mathbb{Q} \sim \mathcal{N}\left(0, \int_0^t \left(e^{-k(t-u)}\right)^2 du\right) \sim \mathcal{N}\left( 0, \frac{1-e^{-2kt}}{2k} \right)$$
+
+Let us denote that stochastic integral as a random variable $Y_t$:
+
+$$\int_0^t e^{-k(t-u)}dW_u^\mathbb{Q} = Y_t$$
+

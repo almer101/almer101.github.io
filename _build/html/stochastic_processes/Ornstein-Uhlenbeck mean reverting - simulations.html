@@ -1,0 +1,563 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Bond prices under the Ornstein Uhlenbeck mean-reverting process &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"], "expec": ["\\mathbb{E}\\left[#1\\right]", 1], "expecc": ["\\mathbb{E}^\\mathbb{#1}\\left[#2\\right]", 2]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'stochastic_processes/Ornstein-Uhlenbeck mean reverting - simulations';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    About the Author and Content
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Probability</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../probability/probability_basics.html">Discrete Probability Basics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Stochastic Processes</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="brownian_motion.html">Brownian Motion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ou_mean_reverting_bond_price.html">Bond prices under the Ornstein Uhlenbeck mean-reverting process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generalized_brownian_motion.html">Generalized Brownian Motion (TBC)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Fixed Income</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../fixed_income/yc_and_ts.html">Yield Curve, Zero Rates, and Term Structure</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fstochastic_processes/Ornstein-Uhlenbeck mean reverting - simulations.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/stochastic_processes/Ornstein-Uhlenbeck mean reverting - simulations.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Bond prices under the Ornstein Uhlenbeck mean-reverting process</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bond-price">Bond price</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#risk-neutral-probability-measure-mathbb-q">Risk neutral probability measure <span class="math notranslate nohighlight">\(\mathbb{Q}\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-the-sde">Solving the SDE</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="bond-prices-under-the-ornstein-uhlenbeck-mean-reverting-process">
+<h1>Bond prices under the Ornstein Uhlenbeck mean-reverting process<a class="headerlink" href="#bond-prices-under-the-ornstein-uhlenbeck-mean-reverting-process" title="Permalink to this heading">#</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
+<p>The OU mean-reverting process is often used to model interest rates and for this reason we will call our stochastic process <span class="math notranslate nohighlight">\(r\)</span>. This process is characterized by the following stochastic differential equation (SDE):</p>
+<div class="math notranslate nohighlight">
+\[dr_t = k(m-r_t)dt + \sigma dW^\mathbb{P}_t\]</div>
+<p>where <span class="math notranslate nohighlight">\(W^\mathbb{P}\)</span> is the <span class="math notranslate nohighlight">\(\mathbb{P}\)</span>-standard Brownian motion and <span class="math notranslate nohighlight">\(\mathbb{P}\)</span> is the historical probability. The parameters above represent:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(k\)</span> characterizes the speed of mean reversion</p></li>
+<li><p><span class="math notranslate nohighlight">\(m\)</span> is the long-run mean of the rate <span class="math notranslate nohighlight">\(r_t\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\sigma\)</span> is the volatility of the interest rate</p></li>
+</ul>
+</section>
+<section id="bond-price">
+<h2>Bond price<a class="headerlink" href="#bond-price" title="Permalink to this heading">#</a></h2>
+<p>A differential equation that describes the change in the value of a riskless asset (in our case we will assume that bonds are riskless) is given by:</p>
+<div class="math notranslate nohighlight">
+\[\frac{dB(t)}{B(t)} = r_t dt\]</div>
+<p>where we usually set an initial condition <span class="math notranslate nohighlight">\(B(0)=1\)</span>. This differential equation is easily solved and gives us the expression for the value of 1 unit of the riskless asset at any time <span class="math notranslate nohighlight">\(t\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[B(t) = B(0)\exp{\left(\int_0^t r_u du\right)} = \exp{\left(\int_0^t r_u du\right)}\]</div>
+<p>Keep in mind that in case that <span class="math notranslate nohighlight">\(r\)</span> is constant, this formula collapses to <span class="math notranslate nohighlight">\(B(t)=e^{rt}\)</span>, but that is not very interesting, and we will now try to tame the stochastic process and see the expression for calculating the bond price when we have a stochastic interest rate.</p>
+<p>With the formula above we also know the expression for the present value of a 1 unit of money being paid at time <span class="math notranslate nohighlight">\(t\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[B(0) = \exp{\left(-\int_0^t r_u du\right)}\]</div>
+<p>Since an integral of a stochastic process is a random variable, we can calculate the today’s price <span class="math notranslate nohighlight">\(p(0,t)\)</span> of 1 unit maturing at time <span class="math notranslate nohighlight">\(t\)</span> as a risk-neutral expectation of the above expression, that is:</p>
+<div class="math notranslate nohighlight">
+\[p(0,t) = \mathbb{E}^\mathbb{Q}\left( e^{-\int_0^t r_u du} \right)\]</div>
+<p>The goal of this post will be the calculation of that expected value. Here we have 2 problems to tackle:</p>
+<ul class="simple">
+<li><p>Finding the risk-neutral probability measure</p></li>
+<li><p>Finding the distribution of <span class="math notranslate nohighlight">\((e^{-\int_0^t r_u du})\)</span></p></li>
+</ul>
+</section>
+<section id="risk-neutral-probability-measure-mathbb-q">
+<h2>Risk neutral probability measure <span class="math notranslate nohighlight">\(\mathbb{Q}\)</span><a class="headerlink" href="#risk-neutral-probability-measure-mathbb-q" title="Permalink to this heading">#</a></h2>
+<p>Risk neutral probability measure is usually obtained such that we look at the discounted gain process of a risky security in the market and adjust the drift of <span class="math notranslate nohighlight">\(W^\mathbb{P}\)</span> to obtain <span class="math notranslate nohighlight">\(W^\mathbb{Q}\)</span>. Here we, of course, rely on the <a class="reference external" href="https://en.wikipedia.org/wiki/Girsanov_theorem">Girsanov theorem</a> that states that given a Brownian motion under <span class="math notranslate nohighlight">\(\mathbb{P}\)</span>, if we can find an adapted process <span class="math notranslate nohighlight">\(\nu_t\)</span> such that <a class="reference external" href="https://en.wikipedia.org/wiki/Novikov%27s_condition">Novikov condition</a> holds, then the following process is a Brownian motion under the new probability measure <span class="math notranslate nohighlight">\(\mathbb{Q}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[dW_t^\mathbb{Q} = \nu_t dt + dW_t^\mathbb{P}\]</div>
+<p>This is a very powerful result, and it allows us to price financial products. We will assume here that the market price of risk is $<span class="math notranslate nohighlight">\(\nu_t = \nu = \frac{\mu_S-r}{\sigma_S}\)</span>$</p>
+<p>where <span class="math notranslate nohighlight">\(\mu_S,r,\sigma_S\)</span> are constants which results in our <span class="math notranslate nohighlight">\(\nu\)</span> being a constant as well. For constants, the Novikov condition holds:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather}
+\mathbb{E}\left[ \exp\left( \int_0^T \nu^2ds \right)\right] &lt; +\infty \\
+\mathbb{E}\left[ \exp\left( \nu^2 (T-0) \right)\right] &lt; +\infty \\
+e^{\nu^2 T} &lt; +\infty \\
+\end{gather}
+\end{split}\]</div>
+<p>Then we know that <span class="math notranslate nohighlight">\(W_t^\mathbb{P}\)</span> can be written as:</p>
+<div class="math notranslate nohighlight">
+\[dW_t^\mathbb{P} = -\nu dt + dW_t^\mathbb{Q}\]</div>
+</section>
+<section id="solving-the-sde">
+<h2>Solving the SDE<a class="headerlink" href="#solving-the-sde" title="Permalink to this heading">#</a></h2>
+<p>Let us now plug that in the initial SDE:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather}
+dr_t = k(m-r_t)dt + \sigma(-\nu dt + dW_t^\mathbb{Q}) \\
+dr_t = k(m-\frac{\sigma\nu}{k}-r_t)dt + \sigma dW_t^\mathbb{Q}
+\end{gather}
+\end{split}\]</div>
+<p>where we denote with <span class="math notranslate nohighlight">\(\vartheta=(m-\frac{\sigma\nu}{k})\)</span> the long-run mean of the interest rate <span class="math notranslate nohighlight">\(r_t\)</span> under the risk neutral probability measure <span class="math notranslate nohighlight">\(\mathbb{Q}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[dr_t = k(\vartheta-r_t)dt + \sigma dW_t^\mathbb{Q}\]</div>
+<p>This SDE has a famous solution that is achieved when assuming a transformation of the initial process <span class="math notranslate nohighlight">\(f(t, r_t)=r_t\cdot e^{kt}\)</span>, and an initial condition of <span class="math notranslate nohighlight">\(r(0)=r_0\)</span>. This is left to the reader as an exercie, but the solution will be provided down in the Appendix, in case this is one of the first times you are encountering SDEs. Anyhow, the solution for this process can be obtained and is:</p>
+<div class="math notranslate nohighlight">
+\[r_t=e^{-kt}(r_0-\vartheta) + \vartheta + \sigma \int_0^t e^{-k(t-u)}dW_u^\mathbb{Q}\]</div>
+<p>It is important to note that the stochastic integral we have in the end is just a <strong>random variable</strong>. This seems silly to mention, but when I was studying stochastic processes, this really helped me to not be frightened by such <em>“weird”</em> integrals. In fact this is a very tamable version of a stochastic integral, because thanks to <strong>Ito’s isometry</strong> property we know that the distribution of this integral is normal:</p>
+<div class="math notranslate nohighlight">
+\[\int_0^t e^{-k(t-u)}dW_u^\mathbb{Q} \sim \mathcal{N}\left(0, \int_0^t \left(e^{-k(t-u)}\right)^2 du\right) \sim \mathcal{N}\left( 0, \frac{1-e^{-2kt}}{2k} \right)\]</div>
+<p>Let us denote that stochastic integral as a random variable <span class="math notranslate nohighlight">\(Y_t\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\int_0^t e^{-k(t-u)}dW_u^\mathbb{Q} = Y_t\]</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./stochastic_processes"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bond-price">Bond price</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#risk-neutral-probability-measure-mathbb-q">Risk neutral probability measure <span class="math notranslate nohighlight">\(\mathbb{Q}\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-the-sde">Solving the SDE</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

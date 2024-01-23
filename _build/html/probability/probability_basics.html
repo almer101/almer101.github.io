@@ -1,0 +1,695 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Discrete Probability Basics &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"], "expec": ["\\mathbb{E}\\left[#1\\right]", 1], "expecc": ["\\mathbb{E}^\\mathbb{#1}\\left[#2\\right]", 2]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'probability/probability_basics';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Brownian Motion" href="../stochastic_processes/brownian_motion.html" />
+    <link rel="prev" title="About the Author and Content" href="../intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    About the Author and Content
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Probability</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Discrete Probability Basics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Stochastic Processes</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../stochastic_processes/brownian_motion.html">Brownian Motion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stochastic_processes/ou_mean_reverting_bond_price.html">Bond prices under the Ornstein Uhlenbeck mean-reverting process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stochastic_processes/generalized_brownian_motion.html">Generalized Brownian Motion (TBC)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Fixed Income</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../fixed_income/yc_and_ts.html">Yield Curve, Zero Rates, and Term Structure</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fprobability/probability_basics.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/probability/probability_basics.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Discrete Probability Basics</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#probability-of-an-event">Probability of an Event</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#expectation-and-variance">Expectation and Variance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-with-expected-value">Examples with Expected Value</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-probability">Conditional probability</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="discrete-probability-basics">
+<h1>Discrete Probability Basics<a class="headerlink" href="#discrete-probability-basics" title="Permalink to this heading">#</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
+<p>Here we will introduce the basics of probability that many people cover in the undergrad studies at a university. The goal is to provide a set of the most important concepts and notions that are necessary for understanding any more advanced concepts in probability.</p>
+</section>
+<section id="probability-of-an-event">
+<h2>Probability of an Event<a class="headerlink" href="#probability-of-an-event" title="Permalink to this heading">#</a></h2>
+<p>In probability you will frequently hear a word event, which can be basically anything, here are some examples of events:</p>
+<ul class="simple">
+<li><p><em>On a single coin flip heads (<span class="math notranslate nohighlight">\(H\)</span>) appears</em></p></li>
+<li><p><em>Number 6 appeared in three consecutive 6-sided-die throws</em></p></li>
+<li><p><em>A train arrived before the 12:00h, which was the scheduled arrival time</em></p></li>
+<li><p><em>Price of the stock <span class="math notranslate nohighlight">\(S\)</span> in one year time is be above 120 EUR</em></p></li>
+<li><p>…</p></li>
+</ul>
+<p>This list is infinite, but I think it is important to have in mind what an <strong>occurrence of an event</strong> means. Given certain assumptions, we could calculate the probability of each of these events. A probability (often denoted by <span class="math notranslate nohighlight">\(\mathbb{P}\)</span> or <span class="math notranslate nohighlight">\(p\)</span>) is a number in interval <span class="math notranslate nohighlight">\([0,1]\)</span> that is assigned to an event (<span class="math notranslate nohighlight">\(E\)</span>). <em>Special cases</em> include:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mathbb{P}(E)=0 \longrightarrow \)</span> the event <span class="math notranslate nohighlight">\(E\)</span> is impossible</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbb{P}(E)=1 \longrightarrow \)</span> the event <span class="math notranslate nohighlight">\(E\)</span> is surely happening</p></li>
+</ul>
+<p>Let us have a look at the example of a 6-sided fair die. A die show any number from one to six, all with equal probability <span class="math notranslate nohighlight">\(p\)</span>. In the case of a fair die, the probability is $<span class="math notranslate nohighlight">\(p=\frac{1}{6}\)</span>$</p>
+<p>Now we need a way to represent the outcome of a die throw. In order to do that we will introduce a concept of a <strong>random variable</strong>. <em>Random variable</em> is a way of assigning a value (most often it is an actual number) to an outcome of an experiment. A very simple random variable is exactly the outcome of a die throw, where we will assign the value of <span class="math notranslate nohighlight">\(1\)</span> if number one appears on the die, number <span class="math notranslate nohighlight">\(2\)</span> if the number two appears on the die, and so on.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>My goal here is not to present these concepts in a mathematically rigorous way, but I still think that for you to be able to read other materials in the books or in the internet, it would be nice to show at least one or two examples of what it would look like to write down a die thrown outcome as a random variable.</p>
+<p>Let us denote with <span class="math notranslate nohighlight">\(\omega_i\)</span> an <strong>event</strong> of a number <span class="math notranslate nohighlight">\(i\)</span> appearing on the die, that is:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{split}
+	\omega_1 &amp;= \{\text{number 1 appears on the die}\} \\
+	\omega_2 &amp;= \{\text{number 2 appears on the die}\} \\
+	&amp;\hspace{0.2cm}\vdots \\
+	\omega_6 &amp;= \{\text{number 6 appears on the die}\}
+\end{split}
+\end{split}\]</div>
+<p>Then a random variable <span class="math notranslate nohighlight">\(X\)</span> that represents the outcome of our die will simply be <span class="math notranslate nohighlight">\(X(\omega_i)=i\)</span>, that is:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{split}
+	X(\omega_1) &amp;= 1 \\
+	X(\omega_2) &amp;= 2 \\
+	&amp;\hspace{0.2cm}\vdots \\
+	X(\omega_6) &amp;= 6 \\
+\end{split}
+\end{split}\]</div>
+<p>We can also imagine a random variable <span class="math notranslate nohighlight">\(Y\)</span> that represents the squared outcome of our die throw, that is:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{split}
+	Y(\omega_1) &amp;= 1^2 = 1\\
+	Y(\omega_2) &amp;= 2^2 = 4\\
+	&amp;\hspace{0.2cm}\vdots \\
+	Y(\omega_6) &amp;= 6^2 = 36
+\end{split}
+\end{split}\]</div>
+<p>Or even a random variable <span class="math notranslate nohighlight">\(Z\)</span> that takes the value of <span class="math notranslate nohighlight">\(1\)</span> if the the number on the die is even, and <span class="math notranslate nohighlight">\(0\)</span> if the number is odd:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{split}
+	Z(\omega_1) = Z(\omega_3) = Z(\omega_5) = 0\\
+	Z(\omega_2) = Z(\omega_4) = Z(\omega_6) = 1
+\end{split}
+\end{split}\]</div>
+</div>
+<p>Now that we have a good understanding of what an event <span class="math notranslate nohighlight">\(\omega\)</span> is, what a random variable is, let us present a compact way to write down random variables (discrete random variables like the ones above):</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+X \sim
+\left(\begin{array}{cccccc}
+	1 &amp; 2 &amp; 3 &amp; 4 &amp; 5 &amp; 6 \\
+	\frac{1}{6} &amp; \frac{1}{6} &amp; \frac{1}{6} &amp; \frac{1}{6} &amp; \frac{1}{6} &amp; \frac{1}{6}
+\end{array}\right)
+\end{split}\]</div>
+<p>where the first row shows all the values that a random variable can take, and the second row shows the probabilities of <span class="math notranslate nohighlight">\(X\)</span> taking that value, i.e. <span class="math notranslate nohighlight">\(\mathbb{P}(\omega_i)\)</span>. For the case of <span class="math notranslate nohighlight">\(Y\)</span> from above, that would be:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+Y \sim
+\left(\begin{array}{cccccc}
+	1 &amp; 4 &amp; 9 &amp; 16 &amp; 25 &amp; 36 \\
+	\frac{1}{6} &amp; \frac{1}{6} &amp; \frac{1}{6} &amp; \frac{1}{6} &amp; \frac{1}{6} &amp; \frac{1}{6}
+\end{array}\right)
+\end{split}\]</div>
+<p>and for <span class="math notranslate nohighlight">\(Z\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+Z \sim
+\left(\begin{array}{cc}
+	0 &amp; 1 \\
+	0.5 &amp; 0.5
+\end{array}\right)
+\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(0.5\)</span> comes from the fact that any of the events <span class="math notranslate nohighlight">\(\omega_1, \omega_3, \omega_5\)</span> can happen in order for <span class="math notranslate nohighlight">\(Z\)</span> to take value of 0, the same goes for the even numbers.</p>
+</section>
+<section id="expectation-and-variance">
+<h2>Expectation and Variance<a class="headerlink" href="#expectation-and-variance" title="Permalink to this heading">#</a></h2>
+<p>Now that we have described the concept of a random variable, it is time for us to show what does it mean to take the <em>expectation</em> or the	 <em>variance</em> of a random variable. An <strong>expectation</strong> (or <strong>expected value</strong>) of a discrete random variable is defined as follows:</p>
+<div class="math notranslate nohighlight">
+\[\mathbb{E}(X) = \sum_{i=1}^n X(\omega_i)\mathbb{P}(\omega_i) = \sum_{i=1}^n x_i p_i\]</div>
+<p>So in other words, the expectation is the weighted sum of all possible outcomes of a random variable, weighted by the probability of those outcomes happening. Let us try to take the expectation of a random variable <span class="math notranslate nohighlight">\(X\)</span> from above:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{split}
+\mathbb{E}(X) &amp;= \sum_{i=1}^6 X(\omega_i)\cdot\mathbb{P}(\omega_i) \\
+\mathbb{E}(X) &amp;= \sum_{i=1}^6 i\cdot\frac{1}{6} \\
+\mathbb{E}(X) &amp;= 1\cdot\frac{1}{6} + 2\cdot\frac{1}{6} + \cdots + 6\cdot\frac{1}{6} \\
+\mathbb{E}(X) &amp;= 3.5 
+\end{split}
+\end{split}\]</div>
+<p>Expected value is a very important concept in probability and probably the concept that (alongside variance) you will use the most. But what is variance? <strong>Variance</strong> of a random variable appears as a needed concept when you ask yourself <em>“How far away do I expect the random variable to be from its expected value?”</em>. If we want to write that mathematically (assuming we want the average of the square of the distance from the expected value) we would get:</p>
+<div class="math notranslate nohighlight">
+\[Var(X) = \mathbb{E}\left( \left(X - \mathbb{E}(X)\right)^2 \right) = \mathbb{E}\left(X^2 - 2X\mathbb{E}(X) + \left( \mathbb{E}(X) \right)^2\right) = \mathbb{E}(X^2) - 2\left(\mathbb{E}(X)\right)^2 + \left(\mathbb{E}(X)\right)^2 = \mathbb{E}(X^2) - \left(\mathbb{E}(X)\right)^2\]</div>
+<p>Where many times the last expression is very handy and could make your calculations quicker. Let us calculate the variance of our random variable <span class="math notranslate nohighlight">\(X\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[Var(X) = \mathbb{E}(X^2) - \left(\mathbb{E}(X)\right)^2\]</div>
+<p>Since we have already calculated the expectation (<span class="math notranslate nohighlight">\(\mathbb{E}(X)\)</span>) we only have to calculate the <span class="math notranslate nohighlight">\(\mathbb{E}(X^2)\)</span>, and now we will show how simple that actually is. If we square a random variable, this means that we are squaring each outcome of that random variable, i.e.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}X^2 \sim
+\left(\begin{array}{cccccc}
+	1 &amp; 4 &amp; 9 &amp; 16 &amp; 25 &amp; 36 \\
+	\frac{1}{6} &amp; \frac{1}{6} &amp; \frac{1}{6} &amp; \frac{1}{6} &amp; \frac{1}{6} &amp; \frac{1}{6}
+\end{array}\right)\end{split}\]</div>
+<p>So the expected value of <span class="math notranslate nohighlight">\(X^2\)</span> will be:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{split}
+\mathbb{E}(X^2) &amp;= \sum_{i=1}^6 \left(X(\omega_i)\right)^2\cdot\mathbb{P}(\omega_i) \\
+\mathbb{E}(X^2) &amp;= \sum_{i=1}^6 i^2\cdot\frac{1}{6} \\
+\mathbb{E}(X^2) &amp;= 1^2\cdot\frac{1}{6} + 2^2\cdot\frac{1}{6} + \cdots + 6^2\cdot\frac{1}{6} \\
+\mathbb{E}(X^2) &amp;=\frac{91}{6} \approx 15.1667 
+\end{split}
+\end{split}\]</div>
+<p>And finally the variance is:</p>
+<div class="math notranslate nohighlight">
+\[Var(X) = \mathbb{E}(X^2) - \left(\mathbb{E}(X)\right)^2 = \frac{91}{6} - (3.5)^2 = \frac{35}{12} \approx 2.91667\]</div>
+</section>
+<section id="examples-with-expected-value">
+<h2>Examples with Expected Value<a class="headerlink" href="#examples-with-expected-value" title="Permalink to this heading">#</a></h2>
+<p>Let us now imagine that we throw a die 5 times in a row and we are interested in the sum of our throws. We want to calculate the expected value and the variance of that sum. We will denote the outcome of the <span class="math notranslate nohighlight">\(i\)</span>-th throw with <span class="math notranslate nohighlight">\(X_i\)</span>. All throws are <em>independent</em> (we will talk more about independence in the next chapters) and they have the same <em>distribution</em> (IID - independent identically distributed). The distribution of each throw is:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}X_i \sim
+\left(\begin{array}{cccccc}
+	1 &amp; 2 &amp; 3 &amp; 4 &amp; 5 &amp; 6 \\
+	\frac{1}{6} &amp; \frac{1}{6} &amp; \frac{1}{6} &amp; \frac{1}{6} &amp; \frac{1}{6} &amp; \frac{1}{6}
+\end{array}\right)\end{split}\]</div>
+<p>We define <span class="math notranslate nohighlight">\(Y\)</span> as the sum of our throws:</p>
+<div class="math notranslate nohighlight">
+\[Y = X_1 + \cdots + X_5 = \sum_{i=0}^5 X_i\]</div>
+<p>We are interested in the expected value of such sum.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It can easily be shown that the expectation of the sum of random variables is always equal to the sum of the expectations of random variables that are included in the sum:</p>
+<div class="math notranslate nohighlight">
+\[\mathbb{E}\left( \sum_{i} X_i\right) = \sum_i \mathbb{E}(X_i)\]</div>
+<p>This holds even if the random variables are <strong>not independent</strong>.</p>
+</div>
+<p>With this in our toolbox we can easily calculate the expected value of <span class="math notranslate nohighlight">\(Y\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\mathbb{E}(Y) = \mathbb{E}\left( \sum_{i=0}^5 X_i \right) = \sum_{i=0}^5 \mathbb{E}(X_i) = 5\cdot 3.5 = 17.5\]</div>
+<p>With variance the story is slightly different and it matters if the random variables are independent or not.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The full formula of the variance of the sum of random variable is as follows:</p>
+<div class="math notranslate nohighlight">
+\[Var\left( \sum_{i} X_i\right) = \sum_i Var(X_i) + 2\sum_{i&lt;j}Cov(X_i,X_j)\]</div>
+<p>Note that the variance of the sum will be equal to the sum of variance if the random variables are <strong>uncorrelated</strong>, which is different from <strong>independence</strong>.</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Independence is a stronger condition:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{split}
+	X,Y \text{ independent } \Rightarrow X,Y \text{ uncorrelated } \\
+	X,Y \text{ uncorrelated } \nRightarrow X,Y \text{ independent }
+\end{split}
+\end{split}\]</div>
+</div>
+<p>In our case, however, the <span class="math notranslate nohighlight">\(X_i\)</span> are independent and we can easily calculate the variance of <span class="math notranslate nohighlight">\(Y\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[Var(Y) = \sum_{i=1}^5 Var(X_i) + 2\sum_{i&lt;j}0 = \sum_{i=1}^5 Var(X_i) = 5 \cdot \frac{35}{12} \approx 14.58\]</div>
+</section>
+<section id="conditional-probability">
+<h2>Conditional probability<a class="headerlink" href="#conditional-probability" title="Permalink to this heading">#</a></h2>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./probability"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">About the Author and Content</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../stochastic_processes/brownian_motion.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Brownian Motion</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#probability-of-an-event">Probability of an Event</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#expectation-and-variance">Expectation and Variance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-with-expected-value">Examples with Expected Value</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-probability">Conditional probability</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

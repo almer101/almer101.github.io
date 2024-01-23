@@ -41,7 +41,10 @@ Feel free to get in touch with me through any of my accounts or check out my CV:
 - Probability advanced
 - Programming and Data Structures
 
-## Check out the content that is available!
+[![Visitors](https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Falmer101.github.io%2Fintro.html&countColor=%232ccce4&style=flat)](https://visitorbadge.io/status?path=https%3A%2F%2Falmer101.github.io%2Fintro.html)
+
+<!--## Check out the content that is available!
 
 ```{tableofcontents}
 ```
+-->

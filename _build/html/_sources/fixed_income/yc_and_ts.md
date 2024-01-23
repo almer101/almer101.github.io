@@ -79,7 +79,7 @@ Now imagine that instead of only one bond with a maturity of two years, we have 
 If we would now plot these YTMs against the maturity we would get the following result. 
 ![Yield Curve](imgs/yc.png)
 
-```{important}
+```{note}
 The curve in the picture above is the yield curve 🙃
 ```
 
