@@ -480,10 +480,7 @@ dr_t = k(m-\frac{\sigma\nu}{k}-r_t)dt + \sigma dW_t^\mathbb{Q}
 	&amp;= \frac{1}{k}(e^{-kt}-1)(\vartheta - r_0) + \vartheta t + \sigma\int_0^t Y_u du
 \end{split}
 \end{split}\]</div>
-<p>Since <span class="math notranslate nohighlight">\(Y_t\)</span> are normally distributed, their sum would also be normally distributed, and since integral is an infinite sum, the element <span class="math notranslate nohighlight">\(\left( \int_0^t Y_u du \right)\)</span> is also normally distributed. Moreover, we know that the mean of <span class="math notranslate nohighlight">\(Y_t\)</span> is zero, so the mean of the integral will also be zero. The only thing that is still unknown is the variance:</p>
-<div class="math notranslate nohighlight">
-\[\int_0^t Y_u du \sim \mathcal{N}(0, \sigma_t)\]</div>
-<p>Before jumping in the calculation of variance, let us calculate the covariance between two <span class="math notranslate nohighlight">\(Y_u\)</span> and <span class="math notranslate nohighlight">\(Y_s\)</span>:</p>
+<p>Since <span class="math notranslate nohighlight">\(Y_t\)</span> are normally distributed, their sum would also be normally distributed, and since integral is an infinite sum, the element <span class="math notranslate nohighlight">\(\left( \int_0^t Y_u du \right)\)</span> is also <strong>normally distributed</strong>. Moreover, we know that the mean of <span class="math notranslate nohighlight">\(Y_t\)</span> is zero, so the mean of the integral will also be zero. Before jumping in the calculation of variance, let us calculate the covariance between two <span class="math notranslate nohighlight">\(Y_u\)</span> and <span class="math notranslate nohighlight">\(Y_s\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{split}

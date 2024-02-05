@@ -40,6 +40,12 @@ Feel free to get in touch with me through any of my accounts or check out my CV:
 - Probability basics
 - Probability advanced
 - Programming and Data Structures
+<!-- 
+	- download interest rates data 
+	- decompose eigenvalues (PCA)
+	- assess shocks to the yield curve
+	https://lnkd.in/eJu2YWz3
+-->
 
 [![Visitors](https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Falmer101.github.io%2Fintro.html&countColor=%232ccce4&style=flat)](https://visitorbadge.io/status?path=https%3A%2F%2Falmer101.github.io%2Fintro.html)
 
