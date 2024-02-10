@@ -99,7 +99,7 @@ $$r_t=e^{-kt}(r_0-\vartheta) + \vartheta + \sigma \int_0^t e^{-k(t-u)}dW_u^\math
 The stochastic integral we have in the end is just a **random variable**. This seems silly to mention, but when I was studying stochastic processes, this really helped me to view them just as random variables.
 ```
 
-In fact this is a very tamable version of a stochastic integral, because thanks to **Ito's isometry** we know that the distribution of this integral is normal: 
+In fact this is a very tamable version of a stochastic integral, because thanks to **Ito's isometry** we know that the distribution of this integral is normal under $\mathbb{Q}$:
 
 $$\int_0^t e^{-k(t-u)}dW_u^\mathbb{Q} \sim \mathcal{N}\left(0, \int_0^t \left(e^{-k(t-u)}\right)^2 du\right) \sim \mathcal{N}\left( 0, \frac{1-e^{-2kt}}{2k} \right)$$
 
@@ -183,7 +183,7 @@ Now we can calculate the mean and the variance of $(-R_t)$:
 
 $$\mathbb{E}^\mathbb{Q}(R_t) = \frac{1}{k}(e^{-kt}-1)(\vartheta - r_0) + \vartheta t = \mu_R$$
 
-$$Var^\mathbb{Q}(-R_t) = \sigma^2 \cdot Var^\mathbb{Q}\left( \int_0^t Y_u du\right)  = \frac{\sigma^2}{2k^2} \left( 2kt-3+4e^{-kt}-e^{-2kt}  \right) = \sigma_R^2$$
+$$Var^\mathbb{Q}(R_t) = \sigma^2 \cdot Var^\mathbb{Q}\left( \int_0^t Y_u du\right)  = \frac{\sigma^2}{2k^2} \left( 2kt-3+4e^{-kt}-e^{-2kt}  \right) = \sigma_R^2$$
 
 So to put it compactly:
 
