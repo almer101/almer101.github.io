@@ -459,7 +459,7 @@ dr_t = k(m-\frac{\sigma\nu}{k}-r_t)dt + \sigma dW_t^\mathbb{Q}
 <p class="admonition-title">Note</p>
 <p>The stochastic integral we have in the end is just a <strong>random variable</strong>. This seems silly to mention, but when I was studying stochastic processes, this really helped me to view them just as random variables.</p>
 </div>
-<p>In fact this is a very tamable version of a stochastic integral, because thanks to <strong>Ito’s isometry</strong> we know that the distribution of this integral is normal:</p>
+<p>In fact this is a very tamable version of a stochastic integral, because thanks to <strong>Ito’s isometry</strong> we know that the distribution of this integral is normal under <span class="math notranslate nohighlight">\(\mathbb{Q}\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[\int_0^t e^{-k(t-u)}dW_u^\mathbb{Q} \sim \mathcal{N}\left(0, \int_0^t \left(e^{-k(t-u)}\right)^2 du\right) \sim \mathcal{N}\left( 0, \frac{1-e^{-2kt}}{2k} \right)\]</div>
 <p>Let us denote that stochastic integral as a random variable <span class="math notranslate nohighlight">\(Y_t\)</span>:</p>
@@ -534,7 +534,7 @@ dr_t = k(m-\frac{\sigma\nu}{k}-r_t)dt + \sigma dW_t^\mathbb{Q}
 <div class="math notranslate nohighlight">
 \[\mathbb{E}^\mathbb{Q}(R_t) = \frac{1}{k}(e^{-kt}-1)(\vartheta - r_0) + \vartheta t = \mu_R\]</div>
 <div class="math notranslate nohighlight">
-\[Var^\mathbb{Q}(-R_t) = \sigma^2 \cdot Var^\mathbb{Q}\left( \int_0^t Y_u du\right)  = \frac{\sigma^2}{2k^2} \left( 2kt-3+4e^{-kt}-e^{-2kt}  \right) = \sigma_R^2\]</div>
+\[Var^\mathbb{Q}(R_t) = \sigma^2 \cdot Var^\mathbb{Q}\left( \int_0^t Y_u du\right)  = \frac{\sigma^2}{2k^2} \left( 2kt-3+4e^{-kt}-e^{-2kt}  \right) = \sigma_R^2\]</div>
 <p>So to put it compactly:</p>
 <div class="math notranslate nohighlight">
 \[R_t \sim \mathcal{N}\left(\mu_R, \sigma_R^2\right)\]</div>
