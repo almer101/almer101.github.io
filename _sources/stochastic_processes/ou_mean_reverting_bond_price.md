@@ -206,7 +206,7 @@ $$
 
 So given the current level of the rate $r_0$, and the parameters $k,\sigma,\vartheta$ we can calculate the risk neutral price of our bond. So for example, if our bond A pays 100 in two years time, the current price of the bond would be:
 
-$$P_A = 100\cdot p(0,1) = 100\cdot \exp\left( \frac{1}{k}(e^{-2k}-1)(\vartheta - r_0) + 2\vartheta + \frac{\sigma^2}{4k^2} \left( 4k-3+4e^{-2k}-e^{-4k}  \right) \right)$$
+$$P_A = 100\cdot p(0,2) = 100\cdot \exp\left( \frac{1}{k}(e^{-2k}-1)(\vartheta - r_0) + 2\vartheta + \frac{\sigma^2}{4k^2} \left( 4k-3+4e^{-2k}-e^{-4k}  \right) \right)$$
 
 ## Concluding notes
 
