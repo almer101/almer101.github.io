@@ -14,6 +14,7 @@ kernelspec:
 
 # Bond prices under the Ornstein Uhlenbeck mean-reverting process
 
+*Date Posted: 23 January 2024*
 
 ## Introduction
 The OU mean-reverting process is often used to model interest rates and for this reason we will call our stochastic process $r$. This process is characterized by the following stochastic differential equation (SDE):
@@ -179,7 +180,7 @@ And then we can write the expression from above once again:
 
 $$R_t = \frac{1}{k}(e^{-kt}-1)(\vartheta - r_0) + \vartheta t + \sigma\int_0^t Y_u du$$
 
-Now we can calculate the mean and the variance of $(-R_t)$:
+Now we can calculate the mean and the variance of $R_t$:
 
 $$\mathbb{E}^\mathbb{Q}(R_t) = \frac{1}{k}(e^{-kt}-1)(\vartheta - r_0) + \vartheta t = \mu_R$$
 
@@ -199,14 +200,14 @@ But since $R_t$ is normally distributed, we know how to calculate the expected v
 
 $$
 \begin{gather}
-	p(0,t) = \mathbb{E}^\mathbb{Q}\left( e^{-R_t} \right) = e^{\mu_R+\frac{1}{2}\sigma_R^2} \\
-	p(0,t) = \exp\left( \frac{1}{k}(e^{-kt}-1)(\vartheta - r_0) + \vartheta t + \frac{\sigma^2}{4k^2} \left( 2kt-3+4e^{-kt}-e^{-2kt}  \right) \right)
+	p(0,t) = \mathbb{E}^\mathbb{Q}\left( e^{-R_t} \right) = e^{-\mu_R+\frac{1}{2}\sigma_R^2} \\
+	p(0,t) = \exp\left( -\frac{1}{k}(e^{-kt}-1)(\vartheta - r_0) - \vartheta t + \frac{\sigma^2}{4k^2} \left( 2kt-3+4e^{-kt}-e^{-2kt}  \right) \right)
 \end{gather}
 $$
 
 So given the current level of the rate $r_0$, and the parameters $k,\sigma,\vartheta$ we can calculate the risk neutral price of our bond. So for example, if our bond A pays 100 in two years time, the current price of the bond would be:
 
-$$P_A = 100\cdot p(0,1) = 100\cdot \exp\left( \frac{1}{k}(e^{-2k}-1)(\vartheta - r_0) + 2\vartheta + \frac{\sigma^2}{4k^2} \left( 4k-3+4e^{-2k}-e^{-4k}  \right) \right)$$
+$$P_A = 100\cdot p(0,2) = 100\cdot \exp\left( -\frac{1}{k}(e^{-2k}-1)(\vartheta - r_0) - 2\vartheta + \frac{\sigma^2}{4k^2} \left( 4k-3+4e^{-2k}-e^{-4k}  \right) \right)$$
 
 ## Concluding notes
 

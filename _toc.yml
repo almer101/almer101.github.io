@@ -11,13 +11,8 @@ parts:
     chapters:
     - file: stochastic_processes/brownian_motion
     - file: stochastic_processes/ou_mean_reverting_bond_price
-    #- file: stochastic_processes/generalized_brownian_motion
+    - file: stochastic_processes/pde_numerical
   - caption: Fixed Income
     chapters:
     - file: fixed_income/yc_and_ts
     # - file: fixed_income/floating_rate_bonds
-  # - caption: Auto-Generated Part
-  #   chapters:
-  #   - file: notebooks
-  #   - file: markdown
-  #   - file: markdown-notebooks      

@@ -14,6 +14,8 @@ kernelspec:
 
 # Discrete Probability Basics
 
+*Date Posted: 23 January 2024*
+
 ## Introduction
 
 Here we will introduce the basics of probability that many people cover in the undergrad studies at a university. The goal is to provide a set of the most important concepts and notions that are necessary for understanding any more advanced concepts in probability.
