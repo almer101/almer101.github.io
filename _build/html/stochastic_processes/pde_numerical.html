@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Numerical procedures to solve Partial Differential Equations (PDE) &#8212; My sample book</title>
   
@@ -19,48 +18,45 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"], "expec": ["\\mathbb{E}\\left[#1\\right]", 1], "expecc": ["\\mathbb{E}^\\mathbb{#1}\\left[#2\\right]", 2]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'stochastic_processes/pde_numerical';</script>
@@ -77,7 +73,15 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -112,11 +116,14 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -131,9 +138,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../intro.html">
+  
   
   
   
@@ -143,12 +152,23 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -324,20 +344,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -369,12 +391,21 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proof">Proof</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation">Implementation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#constructing-the-system-of-equations">Constructing the system of equations</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#single-node-equation">Single node equation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#equation-for-the-whole-row">Equation for the whole row</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation">Implementation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-the-payoff-to-price">Choosing the payoff to price</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#constructing-the-grid">Constructing the grid</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-the-process-governing-the-underlying-s">Choosing the process governing the underlying <span class="math notranslate nohighlight">\(S\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#partial-derivatives-estimation">Partial derivatives estimation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#constructing-the-system-of-equations">Constructing the system of equations</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#single-node-equation">Single node equation</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#equation-for-the-whole-row">Equation for the whole row</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#results">Results</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
             </nav>
         </div>
@@ -384,24 +415,25 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="numerical-procedures-to-solve-partial-differential-equations-pde">
-<h1>Numerical procedures to solve Partial Differential Equations (PDE)<a class="headerlink" href="#numerical-procedures-to-solve-partial-differential-equations-pde" title="Permalink to this heading">#</a></h1>
-<p><em>Date Posted: 25 March 2024</em></p>
+<h1>Numerical procedures to solve Partial Differential Equations (PDE)<a class="headerlink" href="#numerical-procedures-to-solve-partial-differential-equations-pde" title="Link to this heading">#</a></h1>
+<p><em>Date Posted: 27 March 2024</em></p>
 <section id="a-generic-price-process-s-t">
-<h2>A generic price process <span class="math notranslate nohighlight">\(S_t\)</span><a class="headerlink" href="#a-generic-price-process-s-t" title="Permalink to this heading">#</a></h2>
+<h2>A generic price process <span class="math notranslate nohighlight">\(S_t\)</span><a class="headerlink" href="#a-generic-price-process-s-t" title="Link to this heading">#</a></h2>
 <p>Let us say that a general price process can be described as:</p>
 <div class="math notranslate nohighlight">
 \[dS = a(t,S_t)dt + b(t,S_t)dW_t^\mathbb{Q}\]</div>
 <p>where <span class="math notranslate nohighlight">\(W^\mathbb{Q}\)</span> is a Brownian motion under the risk neutral probability measure <span class="math notranslate nohighlight">\(\mathbb{Q}\)</span>.</p>
 </section>
 <section id="black-scholes-pde">
-<h2>Black Scholes PDE<a class="headerlink" href="#black-scholes-pde" title="Permalink to this heading">#</a></h2>
-<p>Probably the most famous PDE in finance is the Black Scholes PDE, which descibes the dynamic relationship that the price of a derivative (<span class="math notranslate nohighlight">\(F\)</span>) needs to satisfy in order for the price to be risk neutral. The equation is expressed as:
-$<span class="math notranslate nohighlight">\(\frac{\partial F}{\partial t} + \frac{\partial F}{\partial S} a(t,S_t) + \frac{1}{2}\frac{\partial^2 F}{\partial S^2} b^2(t,S_t) = rF\)</span>$</p>
+<h2>Black Scholes PDE<a class="headerlink" href="#black-scholes-pde" title="Link to this heading">#</a></h2>
+<p>Probably the most famous PDE in finance is the Black Scholes PDE, which descibes the dynamic relationship that the price of a derivative (<span class="math notranslate nohighlight">\(F\)</span>) needs to satisfy in order for the price to be risk neutral. The equation is expressed as:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial F}{\partial t} + \frac{\partial F}{\partial S} a(t,S_t) + \frac{1}{2}\frac{\partial^2 F}{\partial S^2} b^2(t,S_t) = rF\]</div>
 <section id="proof">
-<h3>Proof<a class="headerlink" href="#proof" title="Permalink to this heading">#</a></h3>
+<h3>Proof<a class="headerlink" href="#proof" title="Link to this heading">#</a></h3>
 <p>The main idea behind the proof is that the <strong>discounted price process of our derivative</strong> <span class="math notranslate nohighlight">\(\left(\tilde{F}(t,S_t) = e^{-rt}F(t,S_t)\right)\)</span> needs to be a martingale under the risk neutral probability measure <span class="math notranslate nohighlight">\(\mathbb{Q}\)</span>. If that is the case, that means that (under <span class="math notranslate nohighlight">\(\mathbb{Q}\)</span>) the drift of the process needs to be zero.</p>
 <p>First we need to express the differential of <span class="math notranslate nohighlight">\(\tilde{F}\)</span>:</p>
 <div class="math notranslate nohighlight">
@@ -420,7 +452,16 @@ $<span class="math notranslate nohighlight">\(\frac{\partial F}{\partial t} + \f
 </section>
 </section>
 <section id="implementation">
-<h2>Implementation<a class="headerlink" href="#implementation" title="Permalink to this heading">#</a></h2>
+<h2>Implementation<a class="headerlink" href="#implementation" title="Link to this heading">#</a></h2>
+<section id="choosing-the-payoff-to-price">
+<h3>Choosing the payoff to price<a class="headerlink" href="#choosing-the-payoff-to-price" title="Link to this heading">#</a></h3>
+<p>For this exercise we chose the condor strategy that is a combination of <strong>four call options</strong> with the same maturity and with strike prices <span class="math notranslate nohighlight">\(K_1&lt;K_2&lt;K_3&lt;K_4\)</span>:</p>
+<ul class="simple">
+<li><p><strong>Long</strong> call with strike <span class="math notranslate nohighlight">\(K_1\)</span></p></li>
+<li><p><strong>Short</strong> call with strike <span class="math notranslate nohighlight">\(K_2\)</span></p></li>
+<li><p><strong>Short</strong> call with strike <span class="math notranslate nohighlight">\(K_3\)</span></p></li>
+<li><p><strong>Long</strong> call with strike <span class="math notranslate nohighlight">\(K_4\)</span></p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -432,19 +473,18 @@ $<span class="math notranslate nohighlight">\(\frac{\partial F}{\partial t} + \f
 <span class="kn">import</span> <span class="nn">matplotlib</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;bmh&#39;</span><span class="p">)</span>
 
-<span class="kn">import</span> <span class="nn">warnings</span>
-<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">,</span><span class="n">category</span><span class="o">=</span><span class="n">cbook</span><span class="o">.</span><span class="n">mplDeprecation</span><span class="p">)</span>
-
+<span class="c1"># Payoff at maturity of the condor strategy</span>
 <span class="k">def</span> <span class="nf">condor_payoff</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">k1</span><span class="p">,</span> <span class="n">k2</span><span class="p">,</span> <span class="n">k3</span><span class="p">,</span> <span class="n">k4</span><span class="p">):</span>
     <span class="n">payoff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">s</span><span class="o">-</span><span class="n">k1</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">s</span><span class="o">-</span><span class="n">k2</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">s</span><span class="o">-</span><span class="n">k3</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">s</span><span class="o">-</span><span class="n">k4</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">payoff</span>
 
+<span class="c1"># Strike prices</span>
 <span class="n">k1</span> <span class="o">=</span> <span class="mi">50</span>
 <span class="n">k2</span> <span class="o">=</span> <span class="mi">60</span>
 <span class="n">k3</span> <span class="o">=</span> <span class="mi">140</span>
 <span class="n">k4</span> <span class="o">=</span> <span class="mi">150</span>
 
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">301</span><span class="p">)</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">condor_payoff</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">k1</span><span class="p">,</span> <span class="n">k2</span><span class="p">,</span> <span class="n">k3</span><span class="p">,</span> <span class="n">k4</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
@@ -457,16 +497,13 @@ $<span class="math notranslate nohighlight">\(\frac{\partial F}{\partial t} + \f
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/98bcc2f38aabd62e25bfd17b0547d11199d1fa7e310e5ee7159b57a11b62df88.png" src="../_images/98bcc2f38aabd62e25bfd17b0547d11199d1fa7e310e5ee7159b57a11b62df88.png" />
+<img alt="../_images/dd2ae43136e0b9da3d23f99f8efe05df0ad0604de2596caaa175c7b477f7911d.png" src="../_images/dd2ae43136e0b9da3d23f99f8efe05df0ad0604de2596caaa175c7b477f7911d.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">S0</span> <span class="o">=</span> <span class="mi">100</span>
 <span class="n">T</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">r</span> <span class="o">=</span> <span class="mf">0.04</span>
-<span class="n">q</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">sigma</span> <span class="o">=</span> <span class="mf">0.35</span>
 
 <span class="n">S_max</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">S0</span>
 
@@ -491,11 +528,43 @@ $<span class="math notranslate nohighlight">\(\frac{\partial F}{\partial t} + \f
 </div>
 </div>
 </div>
+</section>
+<section id="constructing-the-grid">
+<h3>Constructing the grid<a class="headerlink" href="#constructing-the-grid" title="Link to this heading">#</a></h3>
+<p>When working with PDEs we need to work on a grid of possible values of <span class="math notranslate nohighlight">\(t\)</span> and <span class="math notranslate nohighlight">\(S\)</span> (see picture below). When we need to implement that in Python, the easiest way to represent it is by using a matrix. The values of time <span class="math notranslate nohighlight">\(t\)</span> will be in the interval <span class="math notranslate nohighlight">\(t\in[0,T]\)</span>, where <span class="math notranslate nohighlight">\(T\)</span> is the time of maturity of the contract, and the values of the underlying <span class="math notranslate nohighlight">\(S\)</span> will be in the in the interval <span class="math notranslate nohighlight">\([0,S_{max}]\)</span>, where we are free to choose <span class="math notranslate nohighlight">\(S_{max}\)</span>, but normally it is sufficient to choose <span class="math notranslate nohighlight">\(S_{max} = S_0\)</span>, where <span class="math notranslate nohighlight">\(S_0\)</span> is the current price of the underlying.</p>
+<p>Other things that we need to choose are the number of steps that we are going to divide each dimension by:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(n_t\)</span> the number of steps for time</p></li>
+<li><p><span class="math notranslate nohighlight">\(n_S\)</span> the number of steps for the underlying</p></li>
+</ul>
+<p>when we decide that, we know the size of each step for time and for the underlying, i.e.:</p>
+<div class="math notranslate nohighlight">
+\[\Delta t = \frac{T}{n_t} \hspace{0.2cm}\text{ and } \hspace{0.2cm}\Delta S = \frac{S_{max}}{n_S}\]</div>
+<p>Then each possible value of time on our grid is represented by <span class="math notranslate nohighlight">\(t_i = i\Delta t\)</span>, where <span class="math notranslate nohighlight">\(i=0,...,n_t\)</span>. Analogously, for the underlying we have <span class="math notranslate nohighlight">\(S_j = j\Delta S\)</span>, where <span class="math notranslate nohighlight">\(j=0,...,n_S\)</span>.</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:28: SyntaxWarning: invalid escape sequence &#39;\c&#39;
+&lt;&gt;:29: SyntaxWarning: invalid escape sequence &#39;\c&#39;
+&lt;&gt;:28: SyntaxWarning: invalid escape sequence &#39;\c&#39;
+&lt;&gt;:29: SyntaxWarning: invalid escape sequence &#39;\c&#39;
+/var/folders/rf/6t9bw6ws1hv5sdrpkj5vmzgr0000gn/T/ipykernel_36656/4101725373.py:28: SyntaxWarning: invalid escape sequence &#39;\c&#39;
+  plt.text(-0.6,-1.1, &#39;$t=T=n_t\cdot \Delta t$\n$S=0$&#39;, fontsize=&#39;x-large&#39;, rotation=&#39;horizontal&#39;, c=&#39;red&#39;)
+/var/folders/rf/6t9bw6ws1hv5sdrpkj5vmzgr0000gn/T/ipykernel_36656/4101725373.py:29: SyntaxWarning: invalid escape sequence &#39;\c&#39;
+  plt.text(8.45,-1.1, &#39;$t=T=n_t\cdot \Delta t$\n$S=S_{max}=n_S\cdot \Delta S$&#39;, fontsize=&#39;x-large&#39;, rotation=&#39;horizontal&#39;, c=&#39;red&#39;)
+</pre></div>
+</div>
+<img alt="../_images/4f45281d20e593ba4f156f2f7f830b04230bf1eb9cec92915e09f05127db62df.png" src="../_images/4f45281d20e593ba4f156f2f7f830b04230bf1eb9cec92915e09f05127db62df.png" />
+</div>
+</div>
+</section>
+<section id="choosing-the-process-governing-the-underlying-s">
+<h3>Choosing the process governing the underlying <span class="math notranslate nohighlight">\(S\)</span><a class="headerlink" href="#choosing-the-process-governing-the-underlying-s" title="Link to this heading">#</a></h3>
 <p>Now we have to assume a certain process of the underlying stock price. For simplicity and to be able to copmare the result with the one obtained by the closed-form Black-Scholes formula, here we choose the <strong>geometric Brownian motion</strong>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Keep in mind that the solution provided below works for any process as long as it is represetable as:
-$<span class="math notranslate nohighlight">\(dS = a(t,S_t)dt + b(t,S_t)dW_t^\mathbb{Q}\)</span>$</p>
+<p>Keep in mind that the solution provided below works for any process as long as it is represetable as:</p>
+<div class="math notranslate nohighlight">
+\[dS = a(t,S_t)dt + b(t,S_t)dW_t^\mathbb{Q}\]</div>
 </div>
 <p>The GBM under the risk-neutral measure <span class="math notranslate nohighlight">\(\mathbb{Q}\)</span> is given by:</p>
 <div class="math notranslate nohighlight">
@@ -516,14 +585,13 @@ $<span class="math notranslate nohighlight">\(dS = a(t,S_t)dt + b(t,S_t)dW_t^\ma
     b(t,S_t) &amp;= \left(j\cdot \Delta S\right)\sigma
 \end{split}
 \end{split}\]</div>
-<div class="cell tag_remove-input docutils container">
-<div class="cell_output docutils container">
-<img alt="../_images/e8236039f9be1643664bbcbf0d1089f35791efb0fdf86b43c25ce93a2d8b6cb0.png" src="../_images/e8236039f9be1643664bbcbf0d1089f35791efb0fdf86b43c25ce93a2d8b6cb0.png" />
-</div>
-</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">a</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">s</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r</span> <span class="o">=</span> <span class="mf">0.04</span>
+<span class="n">q</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">sigma</span> <span class="o">=</span> <span class="mf">0.35</span>
+
+<span class="k">def</span> <span class="nf">a</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">s</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">s</span><span class="o">*</span><span class="p">(</span><span class="n">r</span><span class="o">-</span><span class="n">q</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">b</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">s</span><span class="p">):</span>
@@ -532,100 +600,53 @@ $<span class="math notranslate nohighlight">\(dS = a(t,S_t)dt + b(t,S_t)dW_t^\ma
 </div>
 </div>
 </div>
-<p><em>Explain the logic behind the implicit method</em></p>
-<ul class="simple">
-<li><p>matrices</p></li>
-<li><p>final solution</p></li>
-</ul>
+</section>
+<section id="partial-derivatives-estimation">
+<h3>Partial derivatives estimation<a class="headerlink" href="#partial-derivatives-estimation" title="Link to this heading">#</a></h3>
 <p>Each point at the grid is <span class="math notranslate nohighlight">\(F(t,S)\)</span>, but <span class="math notranslate nohighlight">\(t\)</span> and <span class="math notranslate nohighlight">\(S\)</span> are the multiples of <span class="math notranslate nohighlight">\(\Delta t\)</span> and <span class="math notranslate nohighlight">\(\Delta S\)</span> that we choose when discretizing the grid:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{split}
-    t = i\cdot\Delta t \\
-    S = j\cdot\Delta S
+    t_i = i\cdot\Delta t \\
+    S_j = j\cdot\Delta S
 \end{split}
 \end{split}\]</div>
-<p>This means that we can write <span class="math notranslate nohighlight">\(F(t,S)\)</span> as $<span class="math notranslate nohighlight">\(F(t,S) = F(i\Delta t, j\Delta S) \equiv f_{i,j}\)</span>$</p>
+<p>This means that we can write <span class="math notranslate nohighlight">\(F(t_i,S_j)\)</span> as $<span class="math notranslate nohighlight">\(F(t_i,S_j) = F(i\Delta t, j\Delta S) \equiv f_{i,j}\)</span>$</p>
 <p>where we choose to denote it with <span class="math notranslate nohighlight">\(f_{i,j}\)</span> for convenience.</p>
 <p>We know that any derivative, which has <span class="math notranslate nohighlight">\(S_t\)</span> as an underlying, has to satisfy the differential equation from above, i.e.</p>
 <div class="math notranslate nohighlight">
 \[\frac{\partial F}{\partial t} + \frac{\partial F}{\partial S}a(t,S_t) + \frac{1}{2}\frac{\partial^2 F}{\partial S^2}b^2(t,S_t) = rF\]</div>
-<p>We discretized the domain of <span class="math notranslate nohighlight">\((t,S)\)</span> with a grid and now the first question may be how will we use that to solve the PDE. Well we need to define how we will proxy the partial derivatives from the equation. When it comes to partial derivative w.r.t. <span class="math notranslate nohighlight">\(S\)</span>, we will use the central difference estimate. That is, if we want to evaulate these partial derivatives in the node <span class="math notranslate nohighlight">\(f_{i,j}\)</span> , then we will use:</p>
+<p>We discretized the domain of <span class="math notranslate nohighlight">\((t,S)\)</span> with a grid and now the first question may be how will we use that to solve the PDE. Well we need to define how we will proxy the partial derivatives from the equation. When it comes to partial derivative w.r.t. <span class="math notranslate nohighlight">\(S\)</span>, we will use the <strong>central difference estimate</strong>. That is, if we want to evaulate these partial derivatives in the node <span class="math notranslate nohighlight">\(F(t_i,S_j)\)</span> , then we will use:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{split}
-    \frac{\partial F}{\partial S} &amp;\approx \frac{F(t,S+\Delta S) - F(t,S-\Delta S)}{2\Delta S} = \frac{F(t,(j+1)\Delta S) - F(t,(j-1)\Delta S)}{2\Delta S} = \frac{f_{i,j+1} - f_{i,j-1}}{2\Delta S} \\
-    \frac{\partial^2 F}{\partial S^2} &amp;\approx \frac{F(t,S+\Delta S) - 2F(t,S) + F(t,S-\Delta S)}{} =\frac{f_{i,j+1} - 2f_{i,j} + f_{i,j-1}}{2\Delta S}
+    \frac{\partial F}{\partial S} &amp;\approx \frac{F(t_i,S_j+\Delta S) - F(t_i,S_j-\Delta S)}{2\Delta S} = \frac{F(t_i,(j+1)\Delta S) - F(t_i,(j-1)\Delta S)}{2\Delta S} = \frac{f_{i,j+1} - f_{i,j-1}}{2\Delta S} \\
+    \frac{\partial^2 F}{\partial S^2} &amp;\approx \frac{F(t_i,S_j+\Delta S) - 2F(t_i,S_j) + F(t_i,S_j-\Delta S)}{} =\frac{f_{i,j+1} - 2f_{i,j} + f_{i,j-1}}{2\Delta S}
 \end{split}
 \end{split}\]</div>
 <p>The choice of our estimator for <span class="math notranslate nohighlight">\(\frac{\partial F}{\partial t}\)</span> will be crucial when it comes to stability of the solution. We have two choices:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{split}
-    \frac{\partial F}{\partial t} \approx \frac{F(t,S) - F(t-\Delta t, S)}{\Delta t} = \frac{f_{i,j} - f_{i-1,j}}{\Delta t} \hspace{0.5cm} \text{(backward difference estimator)}\\
-    \frac{\partial F}{\partial t} \approx \frac{F(t+\Delta t,S) - F(t, S)}{\Delta t} = \frac{f_{i+1,j} - f_{i,j}}{\Delta t} \hspace{0.5cm} \text{(forward difference estimator)}\\
+    \frac{\partial F}{\partial t} \approx \frac{F(t_i,S_j) - F(t_i-\Delta t, S_j)}{\Delta t} = \frac{f_{i,j} - f_{i-1,j}}{\Delta t} \hspace{0.5cm} \text{(backward difference estimator)}\\
+    \frac{\partial F}{\partial t} \approx \frac{F(t_i+\Delta t,S_j) - F(t_i, S_j)}{\Delta t} = \frac{f_{i+1,j} - f_{i,j}}{\Delta t} \hspace{0.5cm} \text{(forward difference estimator)}\\
 \end{split}
 \end{split}\]</div>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>Notice that that these are forward/backward/central estimators <strong>with respect to node</strong> <span class="math notranslate nohighlight">\(f_{i,j}\)</span></p>
+<p>Notice that that these are forward/backward/central estimators <strong>with respect to the node</strong> <span class="math notranslate nohighlight">\(f_{i,j}\)</span></p>
 </div>
 <p>By choosing the <strong>backward difference estimator</strong> we will have a simpler solution, because three bottom nodes determine the value of one node above:</p>
 <p><img alt="explicit" src="../_images/explicit.svg" /></p>
-<p>The downside of this method is that it is not stable, and increasing number of steps <span class="math notranslate nohighlight">\(n_t\)</span> of <span class="math notranslate nohighlight">\(n_s\)</span> (i.e. decreasing the <span class="math notranslate nohighlight">\(\Delta t\)</span> and <span class="math notranslate nohighlight">\(\Delta S\)</span>) the numbers could <em>explode</em> and we would not get the correct solution.</p>
+<p>The downside of this method is that it is not stable, and increasing number of steps <span class="math notranslate nohighlight">\(n_t\)</span> of <span class="math notranslate nohighlight">\(n_S\)</span> (i.e. decreasing the <span class="math notranslate nohighlight">\(\Delta t\)</span> and <span class="math notranslate nohighlight">\(\Delta S\)</span>) the numbers could <em>explode</em> and we would not get the correct solution.</p>
 <p>However, if we choose the <strong>forward difference estimator</strong>, the solution requires us to solve the whole row at once and it is slightly more demanding to derive the system of equations, but it is a very stable solution and it does not suffer from the same problem as above. The reason why it is more challenging is because one node from below determines the value of three nodes above:</p>
 <p><img alt="implicit" src="../_images/implicit.svg" /></p>
 <p>We will go in the course of the latter, we will work out the math, even though it is a bit more challenging, but that will allow us to have a stable solution 🙃</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
-<span class="n">size</span> <span class="o">=</span> <span class="mi">200</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="n">size</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="n">size</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="n">size</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="n">size</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="n">size</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="n">size</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="n">size</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">arrow</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mf">0.1</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;purple&#39;</span><span class="p">,</span> <span class="n">head_width</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">arrow</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mf">0.1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.65</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;purple&#39;</span><span class="p">,</span> <span class="n">head_width</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">arrow</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;purple&#39;</span><span class="p">,</span> <span class="n">head_width</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">arrow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mf">0.1</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="n">head_width</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">arrow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mf">0.1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.65</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="n">head_width</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">arrow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="n">head_width</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="o">-</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">,</span> <span class="s1">&#39;$f_{0,0}$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s1">&#39;xx-large&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.9</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">,</span> <span class="s1">&#39;$f_{0,1}$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s1">&#39;xx-large&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">1.9</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">,</span> <span class="s1">&#39;$f_{0,2}$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s1">&#39;xx-large&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">2.9</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">,</span> <span class="s1">&#39;$f_{0,3}$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s1">&#39;xx-large&#39;</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="o">-</span><span class="mf">0.1</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.15</span><span class="p">,</span> <span class="s1">&#39;$f_{1,0}$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s1">&#39;xx-large&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.9</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.15</span><span class="p">,</span> <span class="s1">&#39;$f_{1,1}$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s1">&#39;xx-large&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">1.9</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.15</span><span class="p">,</span> <span class="s1">&#39;$f_{1,2}$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s1">&#39;xx-large&#39;</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">set_facecolor</span><span class="p">(</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">((</span><span class="o">-</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">1.2</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/d5e744a640d451b9f2482009b3a7968b50ef80429396fca5bf576e296c682dd6.png" src="../_images/d5e744a640d451b9f2482009b3a7968b50ef80429396fca5bf576e296c682dd6.png" />
-</div>
-</div>
 </section>
 <section id="constructing-the-system-of-equations">
-<h2>Constructing the system of equations<a class="headerlink" href="#constructing-the-system-of-equations" title="Permalink to this heading">#</a></h2>
+<h3>Constructing the system of equations<a class="headerlink" href="#constructing-the-system-of-equations" title="Link to this heading">#</a></h3>
 <section id="single-node-equation">
-<h3>Single node equation<a class="headerlink" href="#single-node-equation" title="Permalink to this heading">#</a></h3>
+<h4>Single node equation<a class="headerlink" href="#single-node-equation" title="Link to this heading">#</a></h4>
 <p>The PDE from above has to hold across the whole grid of course:</p>
 <div class="math notranslate nohighlight">
 \[\frac{\partial F}{\partial t} + \frac{\partial F}{\partial S}a(t,S_t) + \frac{1}{2}\frac{\partial^2 F}{\partial S^2}b^2(t,S_t) = rF\]</div>
@@ -676,7 +697,7 @@ f_{i,j-1}\alpha_{i,j}
 \end{split}\]</div>
 </section>
 <section id="equation-for-the-whole-row">
-<h3>Equation for the whole row<a class="headerlink" href="#equation-for-the-whole-row" title="Permalink to this heading">#</a></h3>
+<h4>Equation for the whole row<a class="headerlink" href="#equation-for-the-whole-row" title="Link to this heading">#</a></h4>
 <p>When it comes to the <strong>purple</strong> arrows, we have the following equation:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -748,7 +769,7 @@ f_{0,1}\alpha_{0,2}
    -\frac{f_{1,1}}{\Delta t} - \alpha_{0,1}\cdot f_{0,0} \\ -\frac{f_{1,2}}{\Delta t} \\ -\frac{f_{1,3}}{\Delta t} \\ \vdots \\ -\frac{f_{1,m-2}}{\Delta t} \\ -\frac{f_{1,m-1}}{\Delta t} - \gamma_{0,m-1}f_{0,m}
 \end{bmatrix}
 \end{split}\]</div>
-<p>Essentially, what we did was to remove the first and the last column from the matrix and moved the constant to the right side of their respective equations.</p>
+<p>Where <span class="math notranslate nohighlight">\(m=n_S=\frac{S_{max}}{\Delta S}\)</span> is the number of steps in the value of <span class="math notranslate nohighlight">\(S\)</span> in the grid. Essentially, what we did here was to remove the first and the last column from the matrix and moved the constant to the right side of their respective equations.</p>
 <p>If we write down this equation compactly we get:</p>
 <div class="math notranslate nohighlight">
 \[M\cdot \underline{\vartheta} = \underline{d}\]</div>
@@ -759,7 +780,7 @@ f_{0,1}\alpha_{0,2}
 <p class="admonition-title">Note</p>
 <p>Now we have shown how to obtain the solution for the whole row of the grid. We must repeat this action until we fill the whole grid. Notice that it is only important that the row below the one that we are trying to solve is solved (or is a boundary condition which is the case for the first step of the algorithm).</p>
 </div>
-<p>Let us now have a look at the implementation now😊</p>
+<p>Let us now have a look at the implementation 😊</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nt</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
@@ -773,7 +794,7 @@ f_{0,1}\alpha_{0,2}
         <span class="n">coefs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">alpha</span><span class="p">,</span><span class="n">beta</span><span class="p">,</span><span class="n">gamma</span><span class="p">])</span>
         <span class="n">M</span><span class="p">[</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="o">+</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">coefs</span>
     
-    <span class="c1"># Move the constants on the right side of the equation</span>
+    <span class="c1"># Initialize vector d and move the constants on the right side of the equation</span>
     <span class="n">d</span> <span class="o">=</span> <span class="o">-</span><span class="n">grid</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="n">dt</span>
     <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">M</span><span class="p">)):</span>
         <span class="n">d</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">+=</span> <span class="o">-</span><span class="n">M</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">grid</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">M</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">grid</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
@@ -788,6 +809,12 @@ f_{0,1}\alpha_{0,2}
 </div>
 </div>
 </div>
+</section>
+</section>
+</section>
+<section id="results">
+<h2>Results<a class="headerlink" href="#results" title="Link to this heading">#</a></h2>
+<p>Since we were working on a grid, and for each pair of <span class="math notranslate nohighlight">\((t_i, S_j)\)</span> we have determined the price <span class="math notranslate nohighlight">\(f_{i,j}\)</span> of our contract, we can represent the result as a 3-dimensional surface:</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -797,7 +824,7 @@ f_{0,1}\alpha_{0,2}
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
 
-<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">gca</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">azim</span> <span class="o">=</span> <span class="mi">160</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">elev</span> <span class="o">=</span> <span class="mi">20</span>
 
@@ -821,13 +848,13 @@ f_{0,1}\alpha_{0,2}
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/ff56858520ddf8fdb337a6c423a69d4bef4421636d8bcd5ba430b9224f6e1c13.png" src="../_images/ff56858520ddf8fdb337a6c423a69d4bef4421636d8bcd5ba430b9224f6e1c13.png" />
+<img alt="../_images/2041e1336dad3bc568d9499b376162ea23d2b914150d3dbf930084f14d10ed78.png" src="../_images/2041e1336dad3bc568d9499b376162ea23d2b914150d3dbf930084f14d10ed78.png" />
 </div>
 </div>
+<p>In order to read the current price of the contract, i.e. the price for <span class="math notranslate nohighlight">\((t=0,S_0)\)</span> we need to read it by choosing the correct point on the grid:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Extract the current price</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Current price of the derivative is: </span><span class="si">{</span><span class="n">grid</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="n">S0</span><span class="o">/</span><span class="n">ds</span><span class="p">)]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Current price of the derivative is: </span><span class="si">{</span><span class="n">grid</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="n">S0</span><span class="o">/</span><span class="n">ds</span><span class="p">)]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -839,9 +866,10 @@ f_{0,1}\alpha_{0,2}
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The price obtained by using Black and Scholes formula for 4 call options was:
-$<span class="math notranslate nohighlight">\(P = 7.8535\)</span>$
-which is very close to the price obtained by using the numerical method do solve the PDE.</p>
+<p>The price obtained by using Black and Scholes formula for 4 call options was:</p>
+<div class="math notranslate nohighlight">
+\[P = 7.8535\]</div>
+<p>which is very close to the price obtained by using the numerical method to solve the PDE.</p>
 </div>
 <p>Let us also have a look at the shape of the price for all times <span class="math notranslate nohighlight">\(t\)</span>, that is, what happens if we <em>cut</em> the surface above at each time <span class="math notranslate nohighlight">\(t\in[0,T=1]\)</span>. The color bar shows the <strong>white line</strong> corresponds to time <span class="math notranslate nohighlight">\(t=0\)</span>, while the <strong>dark blue line</strong> corresponds to time <span class="math notranslate nohighlight">\(t=T=1\)</span>. The lighter blue lines correspond to all times inbetween, where the level of <em>blueness</em> is determined by how close we are to the time of maturity <span class="math notranslate nohighlight">\(T\)</span>.</p>
 <div class="cell tag_hide-input docutils container">
@@ -864,18 +892,29 @@ which is very close to the price obtained by using the numerical method do solve
 <span class="n">normalize</span> <span class="o">=</span> <span class="n">mcolors</span><span class="o">.</span><span class="n">Normalize</span><span class="p">(</span><span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">T</span><span class="p">)</span>
 <span class="n">scalarmappaple</span> <span class="o">=</span> <span class="n">cm</span><span class="o">.</span><span class="n">ScalarMappable</span><span class="p">(</span><span class="n">norm</span><span class="o">=</span><span class="n">normalize</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">)</span>
 <span class="n">scalarmappaple</span><span class="o">.</span><span class="n">set_array</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">T</span><span class="p">,</span><span class="n">steps</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">scalarmappaple</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">scalarmappaple</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">())</span>
 
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Cross section of the surface for all $t</span><span class="se">\\</span><span class="s1">in[0,T]$&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/3fb2c9888538b9b9b6c42582d018dce0c1efc7e05fe41d21da0f0f9115a9c085.png" src="../_images/3fb2c9888538b9b9b6c42582d018dce0c1efc7e05fe41d21da0f0f9115a9c085.png" />
+<img alt="../_images/0a9e39c188664bf5ba4808153151c2cf380803ecbe47bdcad1f546cbcc782b62.png" src="../_images/0a9e39c188664bf5ba4808153151c2cf380803ecbe47bdcad1f546cbcc782b62.png" />
 </div>
 </div>
 </section>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
+<p>PDE are a very powerful way to price the derivative products. Not only it is fast, but it is also stable (the solution that we showed here). The downside of this method is that it is difficult to generalize for path-dependent derivatives and if a different method is used to populate the grid the solution may become unstable.</p>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Personal Notes</p></li>
+<li><p>Bocconi Lectures on Computational Methods in Finance</p></li>
+</ul>
 </section>
 </section>
 
@@ -904,11 +943,10 @@ which is very close to the price obtained by using the numerical method do solve
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="ou_mean_reverting_bond_price.html"
@@ -928,10 +966,7 @@ which is very close to the price obtained by using the numerical method do solve
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -939,6 +974,7 @@ which is very close to the price obtained by using the numerical method do solve
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -951,12 +987,21 @@ which is very close to the price obtained by using the numerical method do solve
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proof">Proof</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation">Implementation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#constructing-the-system-of-equations">Constructing the system of equations</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#single-node-equation">Single node equation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#equation-for-the-whole-row">Equation for the whole row</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation">Implementation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-the-payoff-to-price">Choosing the payoff to price</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#constructing-the-grid">Constructing the grid</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-the-process-governing-the-underlying-s">Choosing the process governing the underlying <span class="math notranslate nohighlight">\(S\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#partial-derivatives-estimation">Partial derivatives estimation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#constructing-the-system-of-equations">Constructing the system of equations</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#single-node-equation">Single node equation</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#equation-for-the-whole-row">Equation for the whole row</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#results">Results</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
   </nav></div>
 
@@ -978,9 +1023,10 @@ By The Jupyter Book Community
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -1004,8 +1050,8 @@ By The Jupyter Book Community
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>
