@@ -14,6 +14,8 @@ kernelspec:
 
 # Yield Curve, Zero Rates, and Term Structure
 
+*Date Posted: 2 January 2024*
+
 ## Introduction
 
 Before starting my studies in Quantitative Finance I was working for a while in the banking sector and I was able to see some interesting topics other divisions were working on. The Fixed Income division, among the others, is the one that caught my attention. There was just one problem - I was able to understand very little of what they would be discussing or talking about. Some of the topics that I remember hearing a lot about were **yield curve** and **forward rates**.

@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Brownian Motion &#8212; My sample book</title>
   
@@ -19,48 +18,45 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"], "expec": ["\\mathbb{E}\\left[#1\\right]", 1], "expecc": ["\\mathbb{E}^\\mathbb{#1}\\left[#2\\right]", 2]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'stochastic_processes/brownian_motion';</script>
@@ -77,7 +73,15 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -112,11 +116,14 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -131,9 +138,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../intro.html">
+  
   
   
   
@@ -143,12 +152,23 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -166,6 +186,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Brownian Motion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ou_mean_reverting_bond_price.html">Bond prices under the Ornstein Uhlenbeck mean-reverting process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pde_numerical.html">Numerical procedures to solve Partial Differential Equations (PDE)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Fixed Income</span></p>
 <ul class="nav bd-sidenav">
@@ -323,20 +344,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -380,17 +403,18 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="brownian-motion">
-<h1>Brownian Motion<a class="headerlink" href="#brownian-motion" title="Permalink to this heading">#</a></h1>
+<h1>Brownian Motion<a class="headerlink" href="#brownian-motion" title="Link to this heading">#</a></h1>
+<p><em>Date Posted: 2 January 2024</em></p>
 <section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
 <p>In this post we will talk about the <a class="reference external" href="https://en.wikipedia.org/wiki/Brownian_motion">Brownian motion</a> (also called <strong>Wiener Process</strong>), probably one of the most famous and most important stochastic processes. We will start from the <strong>random walk</strong>, a very simple stochastic process and show how the Brownian motion is actually a form of random walk, just a continous version of it.</p>
 <p>We will also show some simulations and introduce a formal definition of the Brownian motion at the end of this post. We will be dealing with one-dimensional random walk and, consequently, one-dimensional Brownian motion, but it is to be kept in mind that this can also be extended to <span class="math notranslate nohighlight">\(n\)</span> dimensions.</p>
 </section>
 <section id="random-walk">
-<h2>Random Walk<a class="headerlink" href="#random-walk" title="Permalink to this heading">#</a></h2>
+<h2>Random Walk<a class="headerlink" href="#random-walk" title="Link to this heading">#</a></h2>
 <p>Let us imagine a human that is standing on the number line at the point zero at the beginning. Now we allow that human to move either by one step to the right (<span class="math notranslate nohighlight">\(+1\)</span>), or one step to the left (<span class="math notranslate nohighlight">\(-1\)</span>) at any step. For example if our human was standing at the point zero at the beginning (<span class="math notranslate nohighlight">\(n=0\)</span>), then in the next step (<span class="math notranslate nohighlight">\(n=1\)</span>) he can be either at the point <span class="math notranslate nohighlight">\(1\)</span> or <span class="math notranslate nohighlight">\(-1\)</span>. Then in the next step (<span class="math notranslate nohighlight">\(n=2\)</span>), if in the first step he was standing at the number <span class="math notranslate nohighlight">\(1\)</span>, he can either go to number <span class="math notranslate nohighlight">\(2\)</span> or back to <span class="math notranslate nohighlight">\(0\)</span>, where he was at the beginning. Equivalently, if he was standing at <span class="math notranslate nohighlight">\(-1\)</span> in the first step (<span class="math notranslate nohighlight">\(n=1\)</span>), in the next step he can either be at <span class="math notranslate nohighlight">\(-2\)</span> or back to <span class="math notranslate nohighlight">\(0\)</span>.</p>
 <p>Let us denote the position of our human at the step <span class="math notranslate nohighlight">\(n\)</span> with <span class="math notranslate nohighlight">\(x_n\)</span>. We know that he was standing at zero at the beginning, so <span class="math notranslate nohighlight">\(x_0 = 0\)</span>. Then <span class="math notranslate nohighlight">\(x_1\)</span> can either be <span class="math notranslate nohighlight">\(+1\)</span> of <span class="math notranslate nohighlight">\(-1\)</span>, and so on.</p>
 <p>Now let’s imagine a simple trajectory that this human could create and we will plot it in python. For example, let’s imagine that he was moving in each step as shown in the table below:</p>
@@ -450,13 +474,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/1cbd60e176357824840bfe0cfd322b4fdb9ab9c23f4866700bacab12294c2cc7.png" src="../_images/1cbd60e176357824840bfe0cfd322b4fdb9ab9c23f4866700bacab12294c2cc7.png" />
+<img alt="../_images/c10bc482d91d06fbf0b3e36a45acfbeaf71d467787c9b61806fa1a6a772f51f7.png" src="../_images/c10bc482d91d06fbf0b3e36a45acfbeaf71d467787c9b61806fa1a6a772f51f7.png" />
 </div>
 </div>
 <p>As you can see, in our example after 6 steps our human ended up again at the same position where it started. Now we will try to see what happend when we make our steps smaller and smaller :)</p>
 </section>
 <section id="smaller-and-smaller-steps">
-<h2>Smaller and smaller steps<a class="headerlink" href="#smaller-and-smaller-steps" title="Permalink to this heading">#</a></h2>
+<h2>Smaller and smaller steps<a class="headerlink" href="#smaller-and-smaller-steps" title="Link to this heading">#</a></h2>
 <p>Let us restrict the time during which our human will be making steps and let us denote it as an interval <span class="math notranslate nohighlight">\(I=[0,T]\)</span>, where <span class="math notranslate nohighlight">\(T=1\)</span>. For example we can decide that our human will do <span class="math notranslate nohighlight">\(10\)</span> steps, that means that, starting at zero, after every <span class="math notranslate nohighlight">\(0.1\)</span> our human will make a step either by <span class="math notranslate nohighlight">\(+1\)</span> or by <span class="math notranslate nohighlight">\(-1\)</span>. We will denote with <span class="math notranslate nohighlight">\(N\)</span> the number of steps our human will do in our interval. If we say set that our human moves up or down with equal probability of <span class="math notranslate nohighlight">\(0.5\)</span> then with the code below we will plot some random trajectories for values of <span class="math notranslate nohighlight">\(N=\{10,100,1000\}\)</span>.</p>
 <p>Before that we define a function that draws a trajectory for a given final time <span class="math notranslate nohighlight">\(T\)</span>, the number of steps <span class="math notranslate nohighlight">\(N\)</span>, some starting point <span class="math notranslate nohighlight">\(x_0\)</span> and some size of the step, which is <span class="math notranslate nohighlight">\(1\)</span> by default:</p>
 <div class="cell docutils container">
@@ -499,7 +523,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/72919a9a8577f813c6d6deb566545f820584e844d1c795e2c970d04ed1b29dee.png" src="../_images/72919a9a8577f813c6d6deb566545f820584e844d1c795e2c970d04ed1b29dee.png" />
+<img alt="../_images/71c73d6b7323a29aefb9a81680feade91f34f62702a69fba163b168504c4b04c.png" src="../_images/71c73d6b7323a29aefb9a81680feade91f34f62702a69fba163b168504c4b04c.png" />
 </div>
 </div>
 <p>One can immediately see that by leaving the step size equal to <span class="math notranslate nohighlight">\(1\)</span>, the more we split our interval, the more our process can move away from its starting point. We need to somehow restrict the movement such that it depends on the length of 1-step interval, which is <span class="math notranslate nohighlight">\(0.1\)</span> in case <span class="math notranslate nohighlight">\(N=10\)</span> and <span class="math notranslate nohighlight">\(0.01\)</span> in case of <span class="math notranslate nohighlight">\(N=100\)</span>. If we denote with <span class="math notranslate nohighlight">\(h\)</span> the size of the step our human can take, we will set</p>
@@ -525,7 +549,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/d1a179c5e3fe1a30aec6c4e367fbfec8e6c66b6cddead92fa69c72e2afbe5658.png" src="../_images/d1a179c5e3fe1a30aec6c4e367fbfec8e6c66b6cddead92fa69c72e2afbe5658.png" />
+<img alt="../_images/bec4a4b13aaaa2946f178241931b00edf8f248cc94ea149dbb8b5e37cb9ddce6.png" src="../_images/bec4a4b13aaaa2946f178241931b00edf8f248cc94ea149dbb8b5e37cb9ddce6.png" />
 </div>
 </div>
 <div class="admonition note">
@@ -534,7 +558,7 @@ document.write(`
 </div>
 </section>
 <section id="back-to-brownian-motion">
-<h2>Back to Brownian Motion<a class="headerlink" href="#back-to-brownian-motion" title="Permalink to this heading">#</a></h2>
+<h2>Back to Brownian Motion<a class="headerlink" href="#back-to-brownian-motion" title="Link to this heading">#</a></h2>
 <p>What we have built above is esentially something that leads us to the Brownian Motion if we let <span class="math notranslate nohighlight">\(N\rightarrow\infty\)</span> and we restrict the step size to be <span class="math notranslate nohighlight">\(h=\sqrt{\Delta t}\)</span>. The higher value of <span class="math notranslate nohighlight">\(N\)</span> we set, we get finer and finer granularity and we get closer and closer to Brownian motion. We can keep increasing <span class="math notranslate nohighlight">\(N\)</span> to see what will happen, but we expect it to look more and more like a trajectory of a Brownian motion. We can see that for a few trajectories we generate when we split the interval <span class="math notranslate nohighlight">\([0,T]\)</span> into <span class="math notranslate nohighlight">\(10000\)</span> parts.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -553,13 +577,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/5d046e5091aa299ae332a535fb70102cecaa0b33901fdf7e283b36276ab1ed50.png" src="../_images/5d046e5091aa299ae332a535fb70102cecaa0b33901fdf7e283b36276ab1ed50.png" />
+<img alt="../_images/616d0b86407b9db26491f6c1894776110c5d6f5bc6c31a788673cc30e4f73b49.png" src="../_images/616d0b86407b9db26491f6c1894776110c5d6f5bc6c31a788673cc30e4f73b49.png" />
 </div>
 </div>
 <p>This is, however, still not the final product because we still only allow only one possible step size (which can be either positive or negative), and no matter in how many parts we split our interval it is always possible to split it more. For this reason we want to show mathematically what is happening as <span class="math notranslate nohighlight">\(N\)</span> approaches infinity.</p>
 </section>
 <section id="mathematical-point-of-view">
-<h2>Mathematical point of view<a class="headerlink" href="#mathematical-point-of-view" title="Permalink to this heading">#</a></h2>
+<h2>Mathematical point of view<a class="headerlink" href="#mathematical-point-of-view" title="Link to this heading">#</a></h2>
 <p>If we take some <span class="math notranslate nohighlight">\(t&gt;0\)</span> and we split an interval <span class="math notranslate nohighlight">\([0,t]\)</span> into <span class="math notranslate nohighlight">\(n\)</span> steps we can denote the position of our process (what we previously called <em>our human</em>) at time <span class="math notranslate nohighlight">\(t\)</span> with</p>
 <div class="math notranslate nohighlight">
 \[X_t = X_n = Y_1 + Y_2 + \cdots + Y_n = \sum_{i=1}^n Y_i\]</div>
@@ -593,7 +617,7 @@ h &amp; -h \\
 <p>The interpretation of this is that we know what is the distribution of the value of the process <span class="math notranslate nohighlight">\(X\)</span> at any time <span class="math notranslate nohighlight">\(t\)</span>. This is a very cool result and we can now simulate our Brownian motion very accurately.</p>
 </section>
 <section id="formal-definition-of-the-brownian-motion">
-<h2>Formal definition of the Brownian Motion<a class="headerlink" href="#formal-definition-of-the-brownian-motion" title="Permalink to this heading">#</a></h2>
+<h2>Formal definition of the Brownian Motion<a class="headerlink" href="#formal-definition-of-the-brownian-motion" title="Link to this heading">#</a></h2>
 <p>A continuous time stochastic process <span class="math notranslate nohighlight">\(\mathbf{W} = (W_t)_{t\geq0}\)</span> is called a standard <em>Brownian motion</em>, or <em>Wiener process</em>, if:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(W_0 = 0\)</span></p></li>
@@ -605,7 +629,7 @@ h &amp; -h \\
 \[W_t - W_s \sim \mathcal{N}(0,t-s)\]</div>
 </section>
 <section id="simulations">
-<h2>Simulations<a class="headerlink" href="#simulations" title="Permalink to this heading">#</a></h2>
+<h2>Simulations<a class="headerlink" href="#simulations" title="Link to this heading">#</a></h2>
 <p>Now that we have all the ingredients, and the formal definition of the Brownian motion, let us show how we can easily simulate it in Python and show its final distribution. We will start by defining a function</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -680,12 +704,12 @@ h &amp; -h \\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/8ae67bab26a63aeba913111bda4a2a80555da39e6095f7866dc0772dc578b1c9.png" src="../_images/8ae67bab26a63aeba913111bda4a2a80555da39e6095f7866dc0772dc578b1c9.png" />
+<img alt="../_images/8c157c9cb700085bcf560ddf0374fd94cd8126d9f028572cfe2d62e30e27fca2.png" src="../_images/8c157c9cb700085bcf560ddf0374fd94cd8126d9f028572cfe2d62e30e27fca2.png" />
 </div>
 </div>
 </section>
 <section id="next-steps">
-<h2>Next steps<a class="headerlink" href="#next-steps" title="Permalink to this heading">#</a></h2>
+<h2>Next steps<a class="headerlink" href="#next-steps" title="Link to this heading">#</a></h2>
 <p>Now that we have seen how Brownian motion can informally be derived and we have shown how to simulate it, now we can move on to other stochastic processes that build upon the Brownian motion. Then next one that will be discussed is the <strong>Generalized Brownian motion</strong>.</p>
 </section>
 </section>
@@ -715,11 +739,10 @@ h &amp; -h \\
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="../probability/probability_basics.html"
@@ -739,10 +762,7 @@ h &amp; -h \\
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -750,6 +770,7 @@ h &amp; -h \\
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -786,9 +807,10 @@ By The Jupyter Book Community
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -812,8 +834,8 @@ By The Jupyter Book Community
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>

@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Yield Curve, Zero Rates, and Term Structure &#8212; My sample book</title>
   
@@ -19,54 +18,51 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"], "expec": ["\\mathbb{E}\\left[#1\\right]", 1], "expecc": ["\\mathbb{E}^\\mathbb{#1}\\left[#2\\right]", 2]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'fixed_income/yc_and_ts';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Bond prices under the Ornstein Uhlenbeck mean-reverting process" href="../stochastic_processes/ou_mean_reverting_bond_price.html" />
+    <link rel="prev" title="Numerical procedures to solve Partial Differential Equations (PDE)" href="../stochastic_processes/pde_numerical.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -76,7 +72,15 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -111,11 +115,14 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -130,9 +137,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../intro.html">
+  
   
   
   
@@ -142,12 +151,23 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -165,6 +185,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../stochastic_processes/brownian_motion.html">Brownian Motion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../stochastic_processes/ou_mean_reverting_bond_price.html">Bond prices under the Ornstein Uhlenbeck mean-reverting process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stochastic_processes/pde_numerical.html">Numerical procedures to solve Partial Differential Equations (PDE)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Fixed Income</span></p>
 <ul class="current nav bd-sidenav">
@@ -322,20 +343,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -381,18 +404,19 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="yield-curve-zero-rates-and-term-structure">
-<h1>Yield Curve, Zero Rates, and Term Structure<a class="headerlink" href="#yield-curve-zero-rates-and-term-structure" title="Permalink to this heading">#</a></h1>
+<h1>Yield Curve, Zero Rates, and Term Structure<a class="headerlink" href="#yield-curve-zero-rates-and-term-structure" title="Link to this heading">#</a></h1>
+<p><em>Date Posted: 2 January 2024</em></p>
 <section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
 <p>Before starting my studies in Quantitative Finance I was working for a while in the banking sector and I was able to see some interesting topics other divisions were working on. The Fixed Income division, among the others, is the one that caught my attention. There was just one problem - I was able to understand very little of what they would be discussing or talking about. Some of the topics that I remember hearing a lot about were <strong>yield curve</strong> and <strong>forward rates</strong>.</p>
 <p>The yield curve was the winner between the two when it comes to the number of times it was mentioned. Without a strong background in Finance, I knew very little about what the yield curve actually is and even less about what it tells us.</p>
 <p>With time, I have come to gain a fairly good grasp of what it is and also what it is not, and the aim of this article is to share my knowledge with hope that someone who is in a similar situation as I was two years ago may find it useful :)</p>
 </section>
 <section id="bonds-and-yield-to-maturity-ytm">
-<h2>Bonds and Yield to Maturity (YTM)<a class="headerlink" href="#bonds-and-yield-to-maturity-ytm" title="Permalink to this heading">#</a></h2>
+<h2>Bonds and Yield to Maturity (YTM)<a class="headerlink" href="#bonds-and-yield-to-maturity-ytm" title="Link to this heading">#</a></h2>
 <p>To be able to understand what kind of information is contained in the yield curve, we must have a look at bonds. A bond is an instrument used to issue debt that promises a payment (or a series of payments) of fixed amounts at fixed future dates. We can differentiate between:</p>
 <ul class="simple">
 <li><p>Zero-Coupon (ZC) Bonds</p></li>
@@ -426,7 +450,7 @@ document.write(`
 <p>Now that we have covered how to calculate the return, we need to say what that number is. Very simply, the return <span class="math notranslate nohighlight">\(r\)</span> is called <strong>yield to maturity</strong> and it is a rate of return that the investor would realize if the investor were to hold the bond until maturity.</p>
 </section>
 <section id="yield-curve">
-<h2>Yield Curve<a class="headerlink" href="#yield-curve" title="Permalink to this heading">#</a></h2>
+<h2>Yield Curve<a class="headerlink" href="#yield-curve" title="Link to this heading">#</a></h2>
 <p>Now imagine that instead of only one bond with a maturity of two years, we have a whole set of bonds with different maturities. For example, let us imagine this set of bonds (with their YTMs calculated as we did above):</p>
 <table class="table">
 <thead>
@@ -474,7 +498,7 @@ document.write(`
 </div>
 </section>
 <section id="zero-rates">
-<h2>Zero rates<a class="headerlink" href="#zero-rates" title="Permalink to this heading">#</a></h2>
+<h2>Zero rates<a class="headerlink" href="#zero-rates" title="Link to this heading">#</a></h2>
 <p>Let us quickly go back to the way that we calculated YTM for a zero coupon bond and let us take the same example - 100 principal maturing in two years currently trading at 98:</p>
 <div class="math notranslate nohighlight">
 \[98 = \frac{100}{(1+r)^2}\]</div>
@@ -487,7 +511,7 @@ document.write(`
 \[99 = \frac{100}{1+1.010\%}\]</div>
 <p>Let’s pause here for a bit and see what is the consequence of this. The main takeaway here is that cash flow that matures in 1 year has to be discounted at the rate <span class="math notranslate nohighlight">\(r_1 = 1.010\%\)</span> and the cash flow that matures in 2 years has to be discounted at <span class="math notranslate nohighlight">\(r_2 = 1.015\%\)</span>. Rates <span class="math notranslate nohighlight">\(r_1\)</span> and <span class="math notranslate nohighlight">\(r_2\)</span> are called <strong>zero rates</strong> (or spot rates) for maturities of 1 year and 2 years (respectively).</p>
 <section id="bootstrapping">
-<h3>Bootstrapping<a class="headerlink" href="#bootstrapping" title="Permalink to this heading">#</a></h3>
+<h3>Bootstrapping<a class="headerlink" href="#bootstrapping" title="Link to this heading">#</a></h3>
 <p>Now we will introduce the third bond, <strong>Bond C</strong>, which is a coupon bond paying coupons of 10 every year and matures 3 years from now. Such a bond is currently trading at 120 and its YTM is <span class="math notranslate nohighlight">\(2.94\%\)</span>. This means that the following equation holds:</p>
 <div class="math notranslate nohighlight">
 \[120 = \frac{10}{1+2.94\%} + \frac{10}{(1+2.94\%)^2} + \frac{110}{(1+2.94\%)^{3}}\]</div>
@@ -506,7 +530,7 @@ document.write(`
 </div>
 </section>
 <section id="faster-way-to-obtain-zero-rates">
-<h3>Faster way to obtain zero rates<a class="headerlink" href="#faster-way-to-obtain-zero-rates" title="Permalink to this heading">#</a></h3>
+<h3>Faster way to obtain zero rates<a class="headerlink" href="#faster-way-to-obtain-zero-rates" title="Link to this heading">#</a></h3>
 <p>Let us list again the equations for our bonds B, A, and C:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -582,7 +606,7 @@ r_3 &amp;= \sqrt[3]{\frac{1}{z_3}} - 1 = 3.125\%
 </section>
 </section>
 <section id="term-structure">
-<h2>Term Structure<a class="headerlink" href="#term-structure" title="Permalink to this heading">#</a></h2>
+<h2>Term Structure<a class="headerlink" href="#term-structure" title="Link to this heading">#</a></h2>
 <p>The last thing we have to talk about is the term structure and how it is different from the yield curve. The good news is that now we basically have all the ingredients to tackle this.</p>
 <p>The term structure is the curve we get when we plot <strong>zero rates</strong> that we calculated against the <strong>maturity</strong>. If we plot a term structure we get a representation similar to that of the yield curve:</p>
 <p><img alt="Term Structure" src="../_images/ts.png" /></p>
@@ -595,7 +619,7 @@ r_3 &amp;= \sqrt[3]{\frac{1}{z_3}} - 1 = 3.125\%
 </div>
 </section>
 <section id="summing-it-up">
-<h2>Summing it up<a class="headerlink" href="#summing-it-up" title="Permalink to this heading">#</a></h2>
+<h2>Summing it up<a class="headerlink" href="#summing-it-up" title="Link to this heading">#</a></h2>
 <p>The yield curve shows us the relationship between the Yield to Maturity (YTM) and the maturity of the bond, for the bonds coming from the same issuer. YTM is the return that the investor would lock in if he/she would hold the bond until maturity.</p>
 <p>Term structure, on the other hand, shows us the relationship between the zero rates and the maturity (of the cash flows from the certain issuer). In other words, it tells us the rate at which we need to discount the cash flows maturing at a specified time in the future, in order to calculate its present value.</p>
 </section>
@@ -626,25 +650,21 @@ r_3 &amp;= \sqrt[3]{\frac{1}{z_3}} - 1 = 3.125\%
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../stochastic_processes/ou_mean_reverting_bond_price.html"
+       href="../stochastic_processes/pde_numerical.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Bond prices under the Ornstein Uhlenbeck mean-reverting process</p>
+        <p class="prev-next-title">Numerical procedures to solve Partial Differential Equations (PDE)</p>
       </div>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -652,6 +672,7 @@ r_3 &amp;= \sqrt[3]{\frac{1}{z_3}} - 1 = 3.125\%
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -690,9 +711,10 @@ By The Jupyter Book Community
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -716,8 +738,8 @@ By The Jupyter Book Community
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>
