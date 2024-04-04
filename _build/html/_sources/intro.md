@@ -1,6 +1,6 @@
 # About the Author and Content
 
-Hello! My name is **Ivan** and a MSc Computer Science graduate who is also pursuing a Master's in Quantitative Finance. My areas of interest are:
+Hello! My name is Ivan and I am a MSc Computer Science graduate who is also pursuing a Master's in Quantitative Finance. My areas of interest are:
 
 - Mathematics🧮
 - Finance📈
