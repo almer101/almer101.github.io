@@ -12,6 +12,7 @@ parts:
     - file: stochastic_processes/brownian_motion
     - file: stochastic_processes/ou_mean_reverting_bond_price
     - file: stochastic_processes/pde_numerical
+    - file: stochastic_processes/stopping_time/stopping_time
   - caption: Fixed Income
     chapters:
     - file: fixed_income/yc_and_ts
