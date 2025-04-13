@@ -16,4 +16,4 @@ parts:
   - caption: Fixed Income
     chapters:
     - file: fixed_income/yc_and_ts
-    # - file: fixed_income/floating_rate_bonds
+    - file: fixed_income/curve_construction/curve_construction
