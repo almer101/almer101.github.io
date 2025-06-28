@@ -17,3 +17,6 @@ parts:
     chapters:
     - file: fixed_income/yc_and_ts
     - file: fixed_income/curve_construction/curve_construction
+  - caption: FX/Equity
+    chapters:
+    - file: fx_equity/domestic_and_foreign_pricing_theory_martingale_approach.md

@@ -14,7 +14,7 @@ kernelspec:
 
 # Discrete Probability Basics
 
-*Date Posted: 23 January 2024*
+<!--*Date Posted: 23 January 2024*-->
 
 ## Introduction
 

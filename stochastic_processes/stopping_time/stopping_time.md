@@ -14,7 +14,7 @@ kernelspec:
 
 # Hitting Times of a Brownian Motion
 
-*Date Posted: 18 January 2025*
+<!--*Date Posted: 18 January 2025*-->
 
 ## Hitting time
 

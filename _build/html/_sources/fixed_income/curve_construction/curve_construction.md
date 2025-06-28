@@ -14,7 +14,7 @@ kernelspec:
 
 # Yield Curve Construction
 
-*Date Posted: 13 April 2025*
+<!--*Date Posted: 13 April 2025*-->
 
 ## Introduction
 
