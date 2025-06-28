@@ -186,6 +186,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../fixed_income/yc_and_ts.html">Yield Curve, Zero Rates, and Term Structure</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../fixed_income/curve_construction/curve_construction.html">Yield Curve Construction</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">FX/Equity</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../fx_equity/domestic_and_foreign_pricing_theory_martingale_approach.html">Domestic and Foreign Pricing Theory - Martingale Approach</a></li>
+</ul>
 
     </div>
 </nav></div>
@@ -398,7 +402,6 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="brownian-motion">
 <h1>Brownian Motion<a class="headerlink" href="#brownian-motion" title="Link to this heading">#</a></h1>
-<p><em>Date Posted: 2 January 2024</em></p>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
 <p>In this post we will talk about the <a class="reference external" href="https://en.wikipedia.org/wiki/Brownian_motion">Brownian motion</a> (also called <strong>Wiener Process</strong>), probably one of the most famous and most important stochastic processes. We will start from the <strong>random walk</strong>, a very simple stochastic process and show how the Brownian motion is actually a form of random walk, just a continous version of it.</p>
@@ -466,7 +469,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c2932eaf90d6f590d1deb08e47d9bd9e029170603c8a47d5913515668f3a1dde.png" src="../_images/c2932eaf90d6f590d1deb08e47d9bd9e029170603c8a47d5913515668f3a1dde.png" />
+<img alt="../_images/3ce03adaf71d1f787b2255807b8310091493fd59dad358e46c9e5c006c861ca8.png" src="../_images/3ce03adaf71d1f787b2255807b8310091493fd59dad358e46c9e5c006c861ca8.png" />
 </div>
 </div>
 <p>As you can see, in our example after 6 steps our human ended up again at the same position where it started. Now we will try to see what happend when we make our steps smaller and smaller :)</p>
@@ -515,7 +518,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c3f8f90da6165f32e6d271fe3e43915c306d81370f4b827c355b54be85b696e7.png" src="../_images/c3f8f90da6165f32e6d271fe3e43915c306d81370f4b827c355b54be85b696e7.png" />
+<img alt="../_images/46a57ae13a4f184eba85279a447850f87a87a97d73d68cf6d281829fbe9598c8.png" src="../_images/46a57ae13a4f184eba85279a447850f87a87a97d73d68cf6d281829fbe9598c8.png" />
 </div>
 </div>
 <p>One can immediately see that by leaving the step size equal to <span class="math notranslate nohighlight">\(1\)</span>, the more we split our interval, the more our process can move away from its starting point. We need to somehow restrict the movement such that it depends on the length of 1-step interval, which is <span class="math notranslate nohighlight">\(0.1\)</span> in case <span class="math notranslate nohighlight">\(N=10\)</span> and <span class="math notranslate nohighlight">\(0.01\)</span> in case of <span class="math notranslate nohighlight">\(N=100\)</span>. If we denote with <span class="math notranslate nohighlight">\(h\)</span> the size of the step our human can take, we will set</p>
@@ -541,7 +544,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a0ad28ed13400f77f1035098328640a0da6f7fff573178d46bff318c39d15e25.png" src="../_images/a0ad28ed13400f77f1035098328640a0da6f7fff573178d46bff318c39d15e25.png" />
+<img alt="../_images/1d97c6de27c2b0fe6bfc84452364629f17d9020c36948c4c31338c8a9ba845c3.png" src="../_images/1d97c6de27c2b0fe6bfc84452364629f17d9020c36948c4c31338c8a9ba845c3.png" />
 </div>
 </div>
 <div class="admonition note">
@@ -569,7 +572,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c10bd613f4ad30177b8483d0b01a7f643d71d02b3b0947380a6432d7b4a3718d.png" src="../_images/c10bd613f4ad30177b8483d0b01a7f643d71d02b3b0947380a6432d7b4a3718d.png" />
+<img alt="../_images/dca683f1ce4958bb582ba43c4ef1aef9d3f9fa529150d0d0d2451ea64118a1b5.png" src="../_images/dca683f1ce4958bb582ba43c4ef1aef9d3f9fa529150d0d0d2451ea64118a1b5.png" />
 </div>
 </div>
 <p>This is, however, still not the final product because we still only allow only one possible step size (which can be either positive or negative), and no matter in how many parts we split our interval it is always possible to split it more. For this reason we want to show mathematically what is happening as <span class="math notranslate nohighlight">\(N\)</span> approaches infinity.</p>
@@ -696,7 +699,7 @@ h &amp; -h \\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/9b3a87858e6b0ffa0a603c20ce6c975feee488678360cb6d8202293cff01b63d.png" src="../_images/9b3a87858e6b0ffa0a603c20ce6c975feee488678360cb6d8202293cff01b63d.png" />
+<img alt="../_images/8fea3bdd4c71601d0f996289db6e77515241ec07a172d785c20f1ccc2a725722.png" src="../_images/8fea3bdd4c71601d0f996289db6e77515241ec07a172d785c20f1ccc2a725722.png" />
 </div>
 </div>
 </section>

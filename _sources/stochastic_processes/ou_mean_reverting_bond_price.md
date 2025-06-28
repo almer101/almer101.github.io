@@ -14,7 +14,7 @@ kernelspec:
 
 # Bond prices under the Ornstein Uhlenbeck mean-reverting process
 
-*Date Posted: 23 January 2024*
+<!--*Date Posted: 23 January 2024*-->
 
 ## Introduction
 The OU mean-reverting process is often used to model interest rates and for this reason we will call our stochastic process $r$. This process is characterized by the following stochastic differential equation (SDE):

@@ -14,7 +14,7 @@ kernelspec:
 
 # Yield Curve, Zero Rates, and Term Structure
 
-*Date Posted: 2 January 2024*
+<!--*Date Posted: 2 January 2024*-->
 
 ## Introduction
 
